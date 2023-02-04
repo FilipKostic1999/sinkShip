@@ -6,9 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
+
+
 
 @main
 struct sinkShipApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+        
+    }
+
+    
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
