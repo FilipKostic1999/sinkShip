@@ -20,107 +20,146 @@ struct ContentView: View {
     
     var body: some View {
         
-        if userIsLoggedIn {
-            
-            ListView()
+        NavigationView {
             
             
-        } else {
-            content
-        }
-        
-        
-        
-    }
-    
-    var content: some View {
-        
-        ZStack {
-            Color.black
-        
-        
-        VStack(spacing: 20) {
-            
-            Text("Welcome")
-                .foregroundColor(.white)
-                .font(.system(size: 40, weight: .bold, design: .rounded))
-                .offset(x: -100, y: -100)
-            
-            TextField("Email", text: $email)
-                .foregroundColor(.white)
-                .textFieldStyle(.plain)
-                .placeholder(when: email.isEmpty) {
-                    Text("Email")
-                        .foregroundColor(.white)
-                        .bold()
-                }
-            
-            Rectangle()
-                .frame(width: 350, height: 1)
-                .foregroundColor(.white)
-            
-            SecureField("Password", text: $password)
-                .foregroundColor(.white)
-                .textFieldStyle(.plain)
-                .placeholder(when: password.isEmpty) {
-                    Text("Password")
-                        .foregroundColor(.white)
-                        .bold()
+            ZStack {
+                Color.black
+                
+                VStack {
                     
-                }
-            
-            Rectangle()
-                .frame(width: 350, height: 1)
-                .foregroundColor(.white)
-            
-            Button {
-
-                register()
-                
-            } label: {
-                Text("Sign up")
-                    .bold()
-                    .frame(width: 200, height: 40)
-                    .background(
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .fill(.linearGradient(colors: [.pink, .red], startPoint: .top, endPoint: .bottomTrailing))
-                    
-                    )
-                    .foregroundColor(.white)
-                
-            }
-            .padding()
-            .offset(y: 110)
-            
-            Button {
-                
-                 login()
-                
-            } label: {
-                
-                Text("Already have an account? Log in here")
-                    .bold()
-                    .foregroundColor(.white)
-                
-            }
-            .padding(.top)
-            .offset(y: 110)
-            
-            
-        }.frame(width: 350)
-                .onAppear {
-                    Auth.auth().addStateDidChangeListener { auth, user in
-                        if user != nil {
-                            userIsLoggedIn.toggle()
-                        }
+   
+                    Text("Sign up")
+                        .foregroundColor(.white)
+                        .font(.system(size: 40, weight: .bold, design: .rounded))
                         
-                    }
-                }
+                    
+                    
+                    Image("shipBackground")
+                        .resizable() // allows to change picture
+                    // .padding(.horizontal)
+                        .scaledToFit()   // makes sure to resize only what you change in frame
+                    //  .frame(height: 600)
+                       
+                    
+                    
+                    VStack(spacing: 20) {
+                        
+                        
+                        
+                        TextField("Email", text: $email)
+                            .foregroundColor(.white)
+                            .textFieldStyle(.plain)
+                            .placeholder(when: email.isEmpty) {
+                                Text("Email")
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }
+                        
+                        Rectangle()
+                            .frame(width: 350, height: 1)
+                            .foregroundColor(.white)
+                        
+                        SecureField("Password", text: $password)
+                            .foregroundColor(.white)
+                            .textFieldStyle(.plain)
+                            .placeholder(when: password.isEmpty) {
+                                Text("Password")
+                                    .foregroundColor(.white)
+                                    .bold()
+                                
+                            }
+                        
+                        Rectangle()
+                            .frame(width: 350, height: 1)
+                            .foregroundColor(.white)
+                        
+                        Button {
+                            
+                            register()
+                            
+                        } label: {
+                            Text("Sign Up")
+                                .bold()
+                                .frame(width: 200, height: 40)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                                    
+                                )
+                                .foregroundColor(.white)
+                            
+                        }
+                        .padding()
+                        .offset(y: 40)
+                        
+                        
+                        
+                        VStack {
+                            
+                            
+                            NavigationLink(destination:NewDogView().navigationBarBackButtonHidden(true)) {
+                                Text("Local game")
+                                    .bold()
+                                    .frame(width: 200, height: 40)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                            .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                                        
+                                    )
+                                    .foregroundColor(.white)
+                                    
+                                
+                               
+                                
+                            }
+                            
+                            
+                        }.offset(y: 40)
+                        
+                      
+                        
+                        Button {
+                            
+                            login()
+                            
+                            
+                            
+                        } label: {
+                            
+                            Text("Already have an account? Log in here")
+                                .bold()
+                                .foregroundColor(.white)
+                            
+                        }
+                        .padding(.top)
+                        .offset(y: 50)
+                        
+                        
+                    }.frame(width: 350)
+                        .onAppear {
+                            Auth.auth().addStateDidChangeListener { auth, user in
+                                if user != nil {
+                                    userIsLoggedIn.toggle()
+                                }
+                                
+                            }
+                        }
+                } // V
+                
+            }.ignoresSafeArea() // ZStack
+            
+            
+        } // nav
+            
+            
+        } // body
         
-    }.ignoresSafeArea() // ZStack
         
         
-    }
+    
+    
+ 
     
     
     func login() {

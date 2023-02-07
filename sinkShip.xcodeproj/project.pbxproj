@@ -22,6 +22,7 @@
 		C179CEBB2992A642005E1EAC /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEBA2992A642005E1EAC /* ListView.swift */; };
 		C179CEBD2992A6A3005E1EAC /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEBC2992A6A3005E1EAC /* Dog.swift */; };
 		C179CEBF2992A78F005E1EAC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEBE2992A78F005E1EAC /* DataManager.swift */; };
+		C179CEC12992CB42005E1EAC /* NewDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEC02992CB41005E1EAC /* NewDogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		C179CEBA2992A642005E1EAC /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		C179CEBC2992A6A3005E1EAC /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		C179CEBE2992A78F005E1EAC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C179CEC02992CB41005E1EAC /* NewDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				C179CEBA2992A642005E1EAC /* ListView.swift */,
 				C179CEBC2992A6A3005E1EAC /* Dog.swift */,
 				C179CEBE2992A78F005E1EAC /* DataManager.swift */,
+				C179CEC02992CB41005E1EAC /* NewDogView.swift */,
 			);
 			path = sinkShip;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				C145C3AB2985C318000FC441 /* ContentView.swift in Sources */,
 				C11EBB1A2986F9CB00C45AE8 /* menu.swift in Sources */,
+				C179CEC12992CB42005E1EAC /* NewDogView.swift in Sources */,
 				C179CEBD2992A6A3005E1EAC /* Dog.swift in Sources */,
 				C179CEBF2992A78F005E1EAC /* DataManager.swift in Sources */,
 				C179CEBB2992A642005E1EAC /* ListView.swift in Sources */,

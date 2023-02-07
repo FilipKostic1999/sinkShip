@@ -21,8 +21,10 @@ class DataManager: ObservableObject {
         
         dogs.removeAll()
         
+        let CurrentUid = Auth.auth().currentUser?.uid //
+        
         let db = Firestore.firestore()
-        let ref = db.collection("Dogs")
+        let ref = db.collection(CurrentUid!)
         ref.getDocuments { snapshot, error in
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -44,6 +46,22 @@ class DataManager: ObservableObject {
             
         }
         
+        
+        
+    }
+    
+    
+    func addDog(dogBreed: String) {
+        
+        let CurrentUid = Auth.auth().currentUser?.uid //
+        
+        let db = Firestore.firestore()
+        let ref = db.collection(CurrentUid!).document(dogBreed)
+        ref.setData(["breed": dogBreed, "id": 10]) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
         
         
     }

@@ -12,6 +12,7 @@ import Firebase
 
 @main
 struct sinkShipApp: App {
+    @StateObject var dataManager = DataManager()
     
     init() {
         FirebaseApp.configure()
@@ -23,6 +24,7 @@ struct sinkShipApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(dataManager)
         }
     }
 }
