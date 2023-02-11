@@ -63,7 +63,7 @@ struct menu: View {
                 
                 VStack {
                     
-                    NavigationLink(destination:playComputer().navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination:playComputer()) {
                         Text("Play against computer")
                             .padding() // makes background color thick
                             .background(.blue)

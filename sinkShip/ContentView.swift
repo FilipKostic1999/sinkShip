@@ -20,6 +20,8 @@ struct ContentView: View {
     
     var body: some View {
         
+       
+        
         NavigationView {
             
             
@@ -28,11 +30,11 @@ struct ContentView: View {
                 
                 VStack {
                     
-   
+                    
                     Text("Sign up")
                         .foregroundColor(.white)
                         .font(.system(size: 40, weight: .bold, design: .rounded))
-                        
+                    
                     
                     
                     Image("shipBackground")
@@ -40,7 +42,7 @@ struct ContentView: View {
                     // .padding(.horizontal)
                         .scaledToFit()   // makes sure to resize only what you change in frame
                     //  .frame(height: 600)
-                       
+                    
                     
                     
                     VStack(spacing: 20) {
@@ -98,7 +100,7 @@ struct ContentView: View {
                         VStack {
                             
                             
-                            NavigationLink(destination:NewDogView().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:menu().navigationBarBackButtonHidden(true)) {
                                 Text("Local game")
                                     .bold()
                                     .frame(width: 200, height: 40)
@@ -108,20 +110,22 @@ struct ContentView: View {
                                         
                                     )
                                     .foregroundColor(.white)
-                                    
                                 
-                               
+                                
+                                
                                 
                             }
                             
-                            
+ 
                         }.offset(y: 40)
                         
-                      
+                     
                         
                         Button {
                             
                             login()
+                           
+                           
                             
                             
                             
@@ -141,6 +145,7 @@ struct ContentView: View {
                             Auth.auth().addStateDidChangeListener { auth, user in
                                 if user != nil {
                                     userIsLoggedIn.toggle()
+                                    
                                 }
                                 
                             }
@@ -151,6 +156,8 @@ struct ContentView: View {
             
             
         } // nav
+        
+ 
             
             
         } // body
@@ -192,6 +199,20 @@ struct ContentView: View {
         
     }
     
+    
+    
+}
+
+
+
+struct logInConfirmation : View {
+    
+    var body: some View {
+        
+        Text("dbvu")
+        
+        
+    }
     
     
 }
