@@ -100,7 +100,7 @@ struct ContentView: View {
                         VStack {
                             
                             
-                            NavigationLink(destination:menu().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:menu()) {
                                 Text("Local game")
                                     .bold()
                                     .frame(width: 200, height: 40)
