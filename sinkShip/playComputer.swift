@@ -159,7 +159,8 @@ struct playComputer: View {
     @State private var buttonBackColor30 : Color = .white
     
     
-    @State private var loopStop = 0
+    @State private var destroiedShipsPlayer = 0
+    @State private var destroiedShipsComputer = 0
     
     
     
@@ -189,8 +190,9 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        /*
                         if (P1C1S1Active == true && player1Turn == true) {
+                            
                             
                             if (shipPresence1 == 1) {
                                 buttonBackColor1 = .red
@@ -207,8 +209,11 @@ struct playComputer: View {
                             }
                             
                             P1C1S1Active = false
-                            //player1Turn = false
+                            player1Turn = false
+                             
                         }
+                         
+                         */
                         
                     }, label: {
                         Text("\(labelText)")
@@ -222,7 +227,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        /*
                         if (P1C1S2Active == true && player1Turn == true) {
                             
                             if (shipPresence1 == 2) {
@@ -243,7 +248,7 @@ struct playComputer: View {
                            // player1Turn = false
                         }
                         
-                        
+                        */
                         
                     }, label: {
                         Text("\(labelText)")
@@ -255,7 +260,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        /*
                         if (P1C1S3Active == true && player1Turn == true) {
                             
                             if (shipPresence1 == 3) {
@@ -276,7 +281,7 @@ struct playComputer: View {
                            // player1Turn = false
                         }
                         
-                        
+                        */
                         
                         
                     }, label: {
@@ -292,7 +297,7 @@ struct playComputer: View {
                         labelText = "x"
                         
                         
-                        
+                        /*
                         if (P1C1S4Active == true && player1Turn == true) {
                             
                             if (shipPresence1 == 4) {
@@ -313,7 +318,7 @@ struct playComputer: View {
                            // player1Turn = false
                         }
                         
-                        
+                        */
                         
                         
                     }, label: {
@@ -326,6 +331,8 @@ struct playComputer: View {
                     
                     Button(action: {
                         labelText = "x"
+                        
+                        /*
                         
                         if (P1C1S5Active == true && player1Turn == true) {
                             
@@ -348,7 +355,7 @@ struct playComputer: View {
                         }
                         
                         
-                        
+                        */
                         
                     }, label: {
                         Text("\(labelText)")
@@ -368,6 +375,7 @@ struct playComputer: View {
                         labelText = "x"
                         
                         
+                        /*
                         if (P1C2S1Active == true && player1Turn == true) {
                             
                             if (shipPresence2 == 1) {
@@ -388,7 +396,7 @@ struct playComputer: View {
                            // player1Turn = false
                         }
                         
-                        
+                        */
                         
                         
                     }, label: {
@@ -400,6 +408,8 @@ struct playComputer: View {
                     
                     Button(action: {
                         labelText = "x"
+                        
+                        /*
                         
                         if (P1C2S2Active == true && player1Turn == true) {
                             
@@ -421,7 +431,7 @@ struct playComputer: View {
                            // player1Turn = false
                         }
                         
-                        
+                        */
                         
                         
                     }, label: {
@@ -433,6 +443,8 @@ struct playComputer: View {
                     
                     Button(action: {
                         labelText = "x"
+                        
+                        /*
                         
                         if (P1C2S3Active == true && player1Turn == true) {
                             
@@ -454,7 +466,7 @@ struct playComputer: View {
                           //  player1Turn = false
                         }
                         
-                        
+                        */
                         
                     }, label: {
                         Text("\(labelText)")
@@ -467,6 +479,8 @@ struct playComputer: View {
                     
                     Button(action: {
                         labelText = "x"
+                        
+                        /*
                         
                         if (P1C2S4Active == true && player1Turn == true) {
                             
@@ -488,7 +502,7 @@ struct playComputer: View {
                             //player1Turn = false
                         }
                         
-                        
+                        */
                         
                         
                     }, label: {
@@ -502,6 +516,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                        /*
                         
                         if (P1C2S5Active == true && player1Turn == true) {
                             
@@ -523,7 +538,7 @@ struct playComputer: View {
                            // player1Turn = false
                         }
                         
-                        
+                        */
                         
                     }, label: {
                         Text("\(labelText)")
@@ -537,6 +552,8 @@ struct playComputer: View {
                 HStack {
                     Button(action: {
                         labelText = "x"
+                        
+                        /*
                         
                         if (P1C3S1Active == true && player1Turn == true) {
                             
@@ -558,7 +575,7 @@ struct playComputer: View {
                            // player1Turn = false
                         }
                         
-                        
+                        */
                         
                         
                     }, label: {
@@ -571,6 +588,8 @@ struct playComputer: View {
                     
                     Button(action: {
                         labelText = "x"
+                        
+                        /*
                         
                         if (P1C3S2Active == true && player1Turn == true) {
                             
@@ -592,7 +611,7 @@ struct playComputer: View {
                            // player1Turn = false
                         }
                         
-                        
+                        */
                         
                         
                     }, label: {
@@ -605,7 +624,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        /*
                         if (P1C3S3Active == true && player1Turn == true) {
                             
                             if (shipPresence3 == 3) {
@@ -626,7 +645,7 @@ struct playComputer: View {
                            // player1Turn = false
                         }
                         
-                        
+                        */
                         
                     }, label: {
                         Text("\(labelText)")
@@ -640,6 +659,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                        /*
                         if (P1C3S4Active == true && player1Turn == true) {
                             
                             if (shipPresence3 == 4) {
@@ -661,7 +681,7 @@ struct playComputer: View {
                         }
                         
                         
-                        
+                        */
                         
                     }, label: {
                         Text("\(labelText)")
@@ -674,6 +694,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                        /*
                         
                         if (P1C3S5Active == true && player1Turn == true) {
                             
@@ -695,7 +716,7 @@ struct playComputer: View {
                            // player1Turn = false
                         }
                         
-                        
+                        */
                         
                         
                     }, label: {
@@ -716,6 +737,7 @@ struct playComputer: View {
                         labelText = "x"
                         
                         
+                        
                         if (P2C1S1Active == true && player1Turn == true) {
                             
                             if (shipPresence4 == 1) {
@@ -732,49 +754,15 @@ struct playComputer: View {
                                 self.buttonBackColor16 = .red
                             }
                             
-                            
-                            while (true) {
-                                
-                              
-                                
-                                var n = Int(arc4random_uniform(5) + 1)
-                                
-                                if (n == 1 && P1C1S1Active == true)  {
-                                    P1C1S1Active = false
-                                    buttonBackColor1 = .red
-                                    break
-                                } else if (n == 2 && P1C1S2Active == true) {
-                                    P1C1S2Active = false
-                                    buttonBackColor2 = .red
-                                    break
-                                } else if (n == 3 && P1C1S3Active == true) {
-                                    P1C1S3Active = false
-                                    buttonBackColor3 = .red
-                                    break
-                                } else if (n == 4 && P1C1S4Active == true) {
-                                    P1C1S4Active = false
-                                    buttonBackColor4 = .red
-                                    break
-                                } else if (n == 5 && P1C1S5Active == true) {
-                                    P1C1S5Active = false
-                                    buttonBackColor5 = .red
-                                    break
-                                }
-                                
-                                
-                                
-                                
-                                
-                            }
-                            
-                            
-                            
+                         
+                            attackPlayer()
                             
                             
                             P2C1S1Active = false
                            // player1Turn = false
                         }
                         
+                         
                         
                         
                     }, label: {
@@ -802,6 +790,10 @@ struct playComputer: View {
                             } else if self.buttonBackColor17 == .red {
                                 self.buttonBackColor17 = .red
                             }
+                            
+                            
+                            attackPlayer()
+                            
                             
                             P2C1S2Active = false
                            // player1Turn = false
@@ -836,6 +828,9 @@ struct playComputer: View {
                                 self.buttonBackColor18 = .red
                             }
                             
+                            
+                            attackPlayer()
+                            
                             P2C1S3Active = false
                            // player1Turn = false
                         }
@@ -869,6 +864,9 @@ struct playComputer: View {
                                 self.buttonBackColor19 = .red
                             }
                             
+                            
+                            attackPlayer()
+                            
                             P2C1S4Active = false
                            // player1Turn = false
                         }
@@ -901,6 +899,9 @@ struct playComputer: View {
                             } else if self.buttonBackColor20 == .red {
                                 self.buttonBackColor20 = .red
                             }
+                            
+                            
+                            attackPlayer()
                             
                             P2C1S5Active = false
                           //  player1Turn = false
@@ -938,6 +939,9 @@ struct playComputer: View {
                                 self.buttonBackColor21 = .red
                             }
                             
+                            
+                            attackPlayer()
+                            
                             P2C2S1Active = false
                            // player1Turn = false
                         }
@@ -971,6 +975,9 @@ struct playComputer: View {
                                 self.buttonBackColor22 = .red
                             }
                             
+                            
+                            attackPlayer()
+                            
                             P2C2S2Active = false
                            // player1Turn = false
                         }
@@ -1003,6 +1010,9 @@ struct playComputer: View {
                             } else if self.buttonBackColor23 == .red {
                                 self.buttonBackColor23 = .red
                             }
+                            
+                            
+                            attackPlayer()
                             
                             P2C2S3Active = false
                            // player1Turn = false
@@ -1038,6 +1048,9 @@ struct playComputer: View {
                                 self.buttonBackColor24 = .red
                             }
                             
+                            
+                            attackPlayer()
+                            
                             P2C2S4Active = false
                            // player1Turn = false
                         }
@@ -1071,6 +1084,9 @@ struct playComputer: View {
                             } else if self.buttonBackColor25 == .red {
                                 self.buttonBackColor25 = .red
                             }
+                            
+                            
+                            attackPlayer()
                             
                             P2C2S5Active = false
                            // player1Turn = false
@@ -1107,6 +1123,9 @@ struct playComputer: View {
                                 self.buttonBackColor26 = .red
                             }
                             
+                            
+                            attackPlayer()
+                            
                             P2C3S1Active = false
                            // player1Turn = false
                         }
@@ -1140,6 +1159,9 @@ struct playComputer: View {
                             } else if self.buttonBackColor27 == .red {
                                 self.buttonBackColor27 = .red
                             }
+                            
+                            
+                            attackPlayer()
                             
                             P2C3S2Active = false
                           //  player1Turn = false
@@ -1175,6 +1197,9 @@ struct playComputer: View {
                                 self.buttonBackColor28 = .red
                             }
                             
+                            
+                            attackPlayer()
+                            
                             P2C3S3Active = false
                            // player1Turn = false
                         }
@@ -1208,6 +1233,8 @@ struct playComputer: View {
                             } else if self.buttonBackColor29 == .red {
                                 self.buttonBackColor29 = .red
                             }
+                            
+                            attackPlayer()
                             
                             P2C3S4Active = false
                            // player1Turn = false
@@ -1245,6 +1272,9 @@ struct playComputer: View {
                                 self.buttonBackColor30 = .red
                             }
                             
+                            
+                            attackPlayer()
+                            
                             P2C3S5Active = false
                            // player1Turn = false
                         }
@@ -1281,74 +1311,411 @@ struct playComputer: View {
     
     
     
-    
-    func placeRandomShips() {
+    func attackPlayer() {
         
-       
+        while (true) {
             
             
             
-          let num = Int(arc4random_uniform(5) + 1)
-          
+            var n = Int(arc4random_uniform(15) + 1)
             
-          
-            
-            if (num == 1 && P1C1S1Ship == false) {
-                loopStop = loopStop + 1
-                P1C1S1Ship = true
-                
-                
-                
+            if (n == 1 && P1C1S1Active == true)  {
+                P1C1S1Active = false
+                buttonBackColor1 = .blue
+                if (n == shipPresence1) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor1 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 2 && P1C1S2Active == true) {
+                P1C1S2Active = false
+                buttonBackColor2 = .blue
+                if (n == shipPresence1) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor2 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 3 && P1C1S3Active == true) {
+                P1C1S3Active = false
+                buttonBackColor3 = .blue
+                if (n == shipPresence1) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor3 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 4 && P1C1S4Active == true) {
+                P1C1S4Active = false
+                buttonBackColor4 = .blue
+                if (n == shipPresence1) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor4 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 5 && P1C1S5Active == true) {
+                P1C1S5Active = false
+                buttonBackColor5 = .blue
+                if (n == shipPresence1) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor5 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 6 && P1C2S1Active == true) {
+                P1C2S1Active = false
+                buttonBackColor6 = .blue
+                if (shipPresence2 == 1) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor6 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 7 && P1C2S2Active == true) {
+                P1C2S2Active = false
+                buttonBackColor7 = .blue
+                if (shipPresence2 == 2) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor7 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 8 && P1C2S3Active == true) {
+                P1C2S3Active = false
+                buttonBackColor8 = .blue
+                if (shipPresence2 == 3) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor8 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 9 && P1C2S4Active == true) {
+                P1C2S4Active = false
+                buttonBackColor9 = .blue
+                if (shipPresence2 == 4) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor9 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 10 && P1C2S5Active == true) {
+                P1C2S5Active = false
+                buttonBackColor10 = .blue
+                if (shipPresence2 == 5) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor10 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 11 && P1C3S1Active == true) {
+                P1C3S1Active = false
+                buttonBackColor11 = .blue
+                if (shipPresence3 == 1) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor11 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 12 && P1C3S2Active == true) {
+                P1C3S2Active = false
+                buttonBackColor12 = .blue
+                if (shipPresence3 == 2) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor12 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 13 && P1C3S3Active == true) {
+                P1C3S3Active = false
+                buttonBackColor13 = .blue
+                if (shipPresence3 == 3) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor13 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 14 && P1C3S4Active == true) {
+                P1C3S4Active = false
+                buttonBackColor14 = .blue
+                if (shipPresence3 == 4) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor14 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
+            } else if (n == 15 && P1C3S5Active == true) {
+                P1C3S5Active = false
+                buttonBackColor15 = .blue
+                if (shipPresence3 == 5) {
+                    destroiedShipsPlayer = destroiedShipsPlayer + 1
+                    buttonBackColor15 = .red
+                    if (destroiedShipsPlayer >= 3) {
+                        P2C1S1Active = false
+                        P2C1S2Active = false
+                        P2C1S3Active = false
+                        P2C1S4Active = false
+                        P2C1S5Active = false
+                        P2C2S1Active = false
+                        P2C2S2Active = false
+                        P2C2S3Active = false
+                        P2C2S4Active = false
+                        P2C2S5Active = false
+                        P2C3S1Active = false
+                        P2C3S2Active = false
+                        P2C3S3Active = false
+                        P2C3S4Active = false
+                        P2C3S5Active = false
+                        
+                    }
+                }
+                break
             }
             
             
-            if (num == 2 && P1C1S2Ship == false) {
-                loopStop = loopStop + 1
-                P1C1S2Ship = true
-                
-                
-                
-            }
-            
-            
-            if (num == 3 && P1C1S3Ship == false) {
-                loopStop = loopStop + 1
-                P1C1S3Ship = true
-                
-                
-                
-            }
-            
-            if (num == 4 && P1C1S4Ship == false) {
-                loopStop = loopStop + 1
-                P1C1S4Ship = true
-                
-                
-                
-            }
-            
-            
-            if (num == 5 && P1C1S5Ship == false) {
-                loopStop = loopStop + 1
-                P1C1S5Ship = true
-                
-                
-                
-            }
-            
-            
-            print("\(loopStop)")
-            
-            
-           
-                
             
             
             
-            
-        
-        
-        
+        }
         
         
     }
