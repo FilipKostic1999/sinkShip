@@ -164,6 +164,10 @@ struct playComputer: View {
     
     
     
+    @State private var loopStop = false
+    @State private var winner = ""
+    
+    
    
     
   
@@ -180,6 +184,8 @@ struct playComputer: View {
             .position(x: 196, y: 380)
             
             VStack {
+                
+                
                 
                 Spacer()
                 
@@ -728,11 +734,20 @@ struct playComputer: View {
                 }
                 
                 
-                
-                Spacer()
                 Spacer()
                 
                 HStack {
+                    
+                    Text("\(winner)")
+                    
+                    
+                    
+                }
+                
+              
+                
+                HStack {
+                  
                     Button(action: {
                         labelText = "x"
                         
@@ -742,6 +757,10 @@ struct playComputer: View {
                             
                             if (shipPresence4 == 1) {
                                 buttonBackColor16 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor16 = .blue
                             }
@@ -779,6 +798,10 @@ struct playComputer: View {
                             
                             if (shipPresence4 == 2) {
                                 buttonBackColor17 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor17 = .blue
                             }
@@ -816,6 +839,10 @@ struct playComputer: View {
                             
                             if (shipPresence4 == 3) {
                                 buttonBackColor18 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor18 = .blue
                             }
@@ -852,6 +879,10 @@ struct playComputer: View {
                             
                             if (shipPresence4 == 4) {
                                 buttonBackColor19 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor19 = .blue
                             }
@@ -888,6 +919,10 @@ struct playComputer: View {
                             
                             if (shipPresence4 == 5) {
                                 buttonBackColor20 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor20 = .blue
                             }
@@ -927,6 +962,10 @@ struct playComputer: View {
                             
                             if (shipPresence5 == 1) {
                                 buttonBackColor21 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor21 = .blue
                             }
@@ -963,6 +1002,10 @@ struct playComputer: View {
                             
                             if (shipPresence5 == 2) {
                                 buttonBackColor22 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor22 = .blue
                             }
@@ -999,6 +1042,10 @@ struct playComputer: View {
                             
                             if (shipPresence5 == 3) {
                                 buttonBackColor23 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor23 = .blue
                             }
@@ -1036,6 +1083,10 @@ struct playComputer: View {
                             
                             if (shipPresence5 == 4) {
                                 buttonBackColor24 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor24 = .blue
                             }
@@ -1073,6 +1124,10 @@ struct playComputer: View {
                             
                             if (shipPresence5 == 5) {
                                 buttonBackColor25 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor25 = .blue
                             }
@@ -1111,6 +1166,10 @@ struct playComputer: View {
                             
                             if (shipPresence6 == 1) {
                                 buttonBackColor26 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor26 = .blue
                             }
@@ -1148,6 +1207,10 @@ struct playComputer: View {
                             
                             if (shipPresence6 == 2) {
                                 buttonBackColor27 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor27 = .blue
                             }
@@ -1185,6 +1248,10 @@ struct playComputer: View {
                             
                             if (shipPresence6 == 3) {
                                 buttonBackColor28 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor28 = .blue
                             }
@@ -1222,6 +1289,10 @@ struct playComputer: View {
                             
                             if (shipPresence6 == 4) {
                                 buttonBackColor29 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor29 = .blue
                             }
@@ -1260,6 +1331,10 @@ struct playComputer: View {
                             
                             if (shipPresence6 == 5) {
                                 buttonBackColor30 = .red
+                                destroiedShipsComputer = destroiedShipsComputer + 1
+                                if (destroiedShipsComputer >= 3) {
+                                    computerGrid()
+                                }
                             } else {
                                 buttonBackColor30 = .blue
                             }
@@ -1308,6 +1383,62 @@ struct playComputer: View {
         
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    func computerGrid() {
+        
+        P2C1S1Active = false
+        P2C1S2Active = false
+        P2C1S3Active = false
+        P2C1S4Active = false
+        P2C1S5Active = false
+        P2C2S1Active = false
+        P2C2S2Active = false
+        P2C2S3Active = false
+        P2C2S4Active = false
+        P2C2S5Active = false
+        P2C3S1Active = false
+        P2C3S2Active = false
+        P2C3S3Active = false
+        P2C3S4Active = false
+        P2C3S5Active = false
+        
+        P1C1S1Active = false
+        P1C1S2Active = false
+        P1C1S3Active = false
+        P1C1S4Active = false
+        P1C1S5Active = false
+        P1C2S1Active = false
+        P1C2S2Active = false
+        P1C2S3Active = false
+        P1C2S4Active = false
+        P1C2S5Active = false
+        P1C3S1Active = false
+        P1C3S2Active = false
+        P1C3S3Active = false
+        P1C3S4Active = false
+        P1C3S5Active = false
+        
+        loopStop = true
+        
+        
+        winner = "Player wins"
+        
+      
+    }
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1712,7 +1843,13 @@ struct playComputer: View {
             }
             
             
-            
+            if (loopStop == true) {
+                
+                break
+                
+                
+                
+            }
             
             
         }
