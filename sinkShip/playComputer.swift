@@ -60,12 +60,16 @@ struct playComputer: View {
     
     // Asign random ship positions to player and computer
     
-    @State private var shipPresence1 = Int(arc4random_uniform(15) + 1)
-    @State private var shipPresence2 = Int(arc4random_uniform(15) + 1)
+    @State private var shipPresence1 = Int(arc4random_uniform(5) + 1)
+    @State private var shipPresence2 = Int(arc4random_uniform(5) + 1)
+    @State private var shipPresence3 = Int(arc4random_uniform(5) + 1)
+    
+    @State private var shipPresence4 = Int(arc4random_uniform(5) + 1)
+    @State private var shipPresence5 = Int(arc4random_uniform(5) + 1)
+    @State private var shipPresence6 = Int(arc4random_uniform(5) + 1)
     
     
     
-    let number = 1
     
     // Ship counter
    
@@ -155,16 +159,11 @@ struct playComputer: View {
     @State private var buttonBackColor30 : Color = .white
     
     
-    
     @State private var loopStop = 0
     
     
-    init() {
-        
-        placeRandomShips()
-        
-        
-    }
+    
+   
     
   
     var body: some View {
@@ -190,11 +189,12 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                        
                         if (P1C1S1Active == true && player1Turn == true) {
                             
                             if (shipPresence1 == 1) {
                                 buttonBackColor1 = .red
-                            } else if (shipPresence1 == 2) {
+                            } else {
                                 buttonBackColor1 = .blue
                             }
                             
@@ -207,7 +207,7 @@ struct playComputer: View {
                             }
                             
                             P1C1S1Active = false
-                            player1Turn = false
+                            //player1Turn = false
                         }
                         
                     }, label: {
@@ -225,9 +225,9 @@ struct playComputer: View {
                         
                         if (P1C1S2Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence1 == 2) {
                                 buttonBackColor2 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor2 = .blue
                             }
                             
@@ -240,7 +240,7 @@ struct playComputer: View {
                             }
                             
                             P1C1S2Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -258,9 +258,9 @@ struct playComputer: View {
                         
                         if (P1C1S3Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence1 == 3) {
                                 buttonBackColor3 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor3 = .blue
                             }
                             
@@ -273,7 +273,7 @@ struct playComputer: View {
                             }
                             
                             P1C1S3Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -295,9 +295,9 @@ struct playComputer: View {
                         
                         if (P1C1S4Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence1 == 4) {
                                 buttonBackColor4 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor4 = .blue
                             }
                             
@@ -310,7 +310,7 @@ struct playComputer: View {
                             }
                             
                             P1C1S4Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -329,9 +329,9 @@ struct playComputer: View {
                         
                         if (P1C1S5Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence1 == 5) {
                                 buttonBackColor5 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor5 = .blue
                             }
                             
@@ -344,7 +344,7 @@ struct playComputer: View {
                             }
                             
                             P1C1S5Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -370,9 +370,9 @@ struct playComputer: View {
                         
                         if (P1C2S1Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence2 == 1) {
                                 buttonBackColor6 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor6 = .blue
                             }
                             
@@ -385,7 +385,7 @@ struct playComputer: View {
                             }
                             
                             P1C2S1Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -403,9 +403,9 @@ struct playComputer: View {
                         
                         if (P1C2S2Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence2 == 2) {
                                 buttonBackColor7 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor7 = .blue
                             }
                             
@@ -418,7 +418,7 @@ struct playComputer: View {
                             }
                             
                             P1C2S2Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -436,9 +436,9 @@ struct playComputer: View {
                         
                         if (P1C2S3Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence2 == 3) {
                                 buttonBackColor8 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor8 = .blue
                             }
                             
@@ -451,7 +451,7 @@ struct playComputer: View {
                             }
                             
                             P1C2S3Active = false
-                            player1Turn = false
+                          //  player1Turn = false
                         }
                         
                         
@@ -470,9 +470,9 @@ struct playComputer: View {
                         
                         if (P1C2S4Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence2 == 4) {
                                 buttonBackColor9 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor9 = .blue
                             }
                             
@@ -485,7 +485,7 @@ struct playComputer: View {
                             }
                             
                             P1C2S4Active = false
-                            player1Turn = false
+                            //player1Turn = false
                         }
                         
                         
@@ -505,9 +505,9 @@ struct playComputer: View {
                         
                         if (P1C2S5Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence2 == 5) {
                                 buttonBackColor10 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor10 = .blue
                             }
                             
@@ -520,7 +520,7 @@ struct playComputer: View {
                             }
                             
                             P1C2S5Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -540,9 +540,9 @@ struct playComputer: View {
                         
                         if (P1C3S1Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence3 == 1) {
                                 buttonBackColor11 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor11 = .blue
                             }
                             
@@ -555,7 +555,7 @@ struct playComputer: View {
                             }
                             
                             P1C3S1Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -574,9 +574,9 @@ struct playComputer: View {
                         
                         if (P1C3S2Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence3 == 2) {
                                 buttonBackColor12 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor12 = .blue
                             }
                             
@@ -589,7 +589,7 @@ struct playComputer: View {
                             }
                             
                             P1C3S2Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -608,9 +608,9 @@ struct playComputer: View {
                         
                         if (P1C3S3Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence3 == 3) {
                                 buttonBackColor13 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor13 = .blue
                             }
                             
@@ -623,7 +623,7 @@ struct playComputer: View {
                             }
                             
                             P1C3S3Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -642,9 +642,9 @@ struct playComputer: View {
                         
                         if (P1C3S4Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence3 == 4) {
                                 buttonBackColor14 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor14 = .blue
                             }
                             
@@ -657,7 +657,7 @@ struct playComputer: View {
                             }
                             
                             P1C3S4Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -677,9 +677,9 @@ struct playComputer: View {
                         
                         if (P1C3S5Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence3 == 5) {
                                 buttonBackColor15 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor15 = .blue
                             }
                             
@@ -692,7 +692,7 @@ struct playComputer: View {
                             }
                             
                             P1C3S5Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -718,9 +718,9 @@ struct playComputer: View {
                         
                         if (P2C1S1Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence4 == 1) {
                                 buttonBackColor16 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor16 = .blue
                             }
                             
@@ -732,8 +732,47 @@ struct playComputer: View {
                                 self.buttonBackColor16 = .red
                             }
                             
+                            
+                            while (true) {
+                                
+                              
+                                
+                                var n = Int(arc4random_uniform(5) + 1)
+                                
+                                if (n == 1 && P1C1S1Active == true)  {
+                                    P1C1S1Active = false
+                                    buttonBackColor1 = .red
+                                    break
+                                } else if (n == 2 && P1C1S2Active == true) {
+                                    P1C1S2Active = false
+                                    buttonBackColor2 = .red
+                                    break
+                                } else if (n == 3 && P1C1S3Active == true) {
+                                    P1C1S3Active = false
+                                    buttonBackColor3 = .red
+                                    break
+                                } else if (n == 4 && P1C1S4Active == true) {
+                                    P1C1S4Active = false
+                                    buttonBackColor4 = .red
+                                    break
+                                } else if (n == 5 && P1C1S5Active == true) {
+                                    P1C1S5Active = false
+                                    buttonBackColor5 = .red
+                                    break
+                                }
+                                
+                                
+                                
+                                
+                                
+                            }
+                            
+                            
+                            
+                            
+                            
                             P2C1S1Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -750,9 +789,9 @@ struct playComputer: View {
                         
                         if (P2C1S2Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence4 == 2) {
                                 buttonBackColor17 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor17 = .blue
                             }
                             
@@ -765,7 +804,7 @@ struct playComputer: View {
                             }
                             
                             P2C1S2Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -783,9 +822,9 @@ struct playComputer: View {
                         
                         if (P2C1S3Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence4 == 3) {
                                 buttonBackColor18 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor18 = .blue
                             }
                             
@@ -798,7 +837,7 @@ struct playComputer: View {
                             }
                             
                             P2C1S3Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -816,9 +855,9 @@ struct playComputer: View {
                         
                         if (P2C1S4Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence4 == 4) {
                                 buttonBackColor19 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor19 = .blue
                             }
                             
@@ -831,7 +870,7 @@ struct playComputer: View {
                             }
                             
                             P2C1S4Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -849,9 +888,9 @@ struct playComputer: View {
                         
                         if (P2C1S5Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence4 == 5) {
                                 buttonBackColor20 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor20 = .blue
                             }
                             
@@ -864,7 +903,7 @@ struct playComputer: View {
                             }
                             
                             P2C1S5Active = false
-                            player1Turn = false
+                          //  player1Turn = false
                         }
                         
                         
@@ -885,9 +924,9 @@ struct playComputer: View {
                         
                         if (P2C2S1Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence5 == 1) {
                                 buttonBackColor21 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor21 = .blue
                             }
                             
@@ -900,7 +939,7 @@ struct playComputer: View {
                             }
                             
                             P2C2S1Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -918,9 +957,9 @@ struct playComputer: View {
                         
                         if (P2C2S2Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence5 == 2) {
                                 buttonBackColor22 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor22 = .blue
                             }
                             
@@ -933,7 +972,7 @@ struct playComputer: View {
                             }
                             
                             P2C2S2Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -951,9 +990,9 @@ struct playComputer: View {
                         
                         if (P2C2S3Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence5 == 3) {
                                 buttonBackColor23 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor23 = .blue
                             }
                             
@@ -966,7 +1005,7 @@ struct playComputer: View {
                             }
                             
                             P2C2S3Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -985,9 +1024,9 @@ struct playComputer: View {
                         
                         if (P2C2S4Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence5 == 4) {
                                 buttonBackColor24 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor24 = .blue
                             }
                             
@@ -1000,7 +1039,7 @@ struct playComputer: View {
                             }
                             
                             P2C2S4Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -1019,9 +1058,9 @@ struct playComputer: View {
                         
                         if (P2C2S5Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence5 == 5) {
                                 buttonBackColor25 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor25 = .blue
                             }
                             
@@ -1034,7 +1073,7 @@ struct playComputer: View {
                             }
                             
                             P2C2S5Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -1054,9 +1093,9 @@ struct playComputer: View {
                         
                         if (P2C3S1Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence6 == 1) {
                                 buttonBackColor26 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor26 = .blue
                             }
                             
@@ -1069,7 +1108,7 @@ struct playComputer: View {
                             }
                             
                             P2C3S1Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -1088,9 +1127,9 @@ struct playComputer: View {
                         
                         if (P2C3S2Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence6 == 2) {
                                 buttonBackColor27 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor27 = .blue
                             }
                             
@@ -1103,7 +1142,7 @@ struct playComputer: View {
                             }
                             
                             P2C3S2Active = false
-                            player1Turn = false
+                          //  player1Turn = false
                         }
                         
                         
@@ -1122,9 +1161,9 @@ struct playComputer: View {
                         
                         if (P2C3S3Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence6 == 3) {
                                 buttonBackColor28 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor28 = .blue
                             }
                             
@@ -1137,7 +1176,7 @@ struct playComputer: View {
                             }
                             
                             P2C3S3Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -1156,9 +1195,9 @@ struct playComputer: View {
                         
                         if (P2C3S4Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence6 == 4) {
                                 buttonBackColor29 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor29 = .blue
                             }
                             
@@ -1171,7 +1210,7 @@ struct playComputer: View {
                             }
                             
                             P2C3S4Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -1192,9 +1231,9 @@ struct playComputer: View {
                         
                         if (P2C3S5Active == true && player1Turn == true) {
                             
-                            if (number == 1) {
+                            if (shipPresence6 == 5) {
                                 buttonBackColor30 = .red
-                            } else if (number == 2) {
+                            } else {
                                 buttonBackColor30 = .blue
                             }
                             
@@ -1207,7 +1246,7 @@ struct playComputer: View {
                             }
                             
                             P2C3S5Active = false
-                            player1Turn = false
+                           // player1Turn = false
                         }
                         
                         
@@ -1246,6 +1285,70 @@ struct playComputer: View {
     func placeRandomShips() {
         
        
+            
+            
+            
+          let num = Int(arc4random_uniform(5) + 1)
+          
+            
+          
+            
+            if (num == 1 && P1C1S1Ship == false) {
+                loopStop = loopStop + 1
+                P1C1S1Ship = true
+                
+                
+                
+            }
+            
+            
+            if (num == 2 && P1C1S2Ship == false) {
+                loopStop = loopStop + 1
+                P1C1S2Ship = true
+                
+                
+                
+            }
+            
+            
+            if (num == 3 && P1C1S3Ship == false) {
+                loopStop = loopStop + 1
+                P1C1S3Ship = true
+                
+                
+                
+            }
+            
+            if (num == 4 && P1C1S4Ship == false) {
+                loopStop = loopStop + 1
+                P1C1S4Ship = true
+                
+                
+                
+            }
+            
+            
+            if (num == 5 && P1C1S5Ship == false) {
+                loopStop = loopStop + 1
+                P1C1S5Ship = true
+                
+                
+                
+            }
+            
+            
+            print("\(loopStop)")
+            
+            
+           
+                
+            
+            
+            
+            
+        
+        
+        
         
         
     }
