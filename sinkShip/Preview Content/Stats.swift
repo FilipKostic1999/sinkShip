@@ -14,6 +14,8 @@ struct Stats: View {
     @State private var showPopup = false
     
     
+    @State private var winningRate = 0
+    
     
     
     
@@ -23,7 +25,10 @@ struct Stats: View {
         NavigationView {
             
             List(dataManager.dogs, id: \.id) { dog in
-                Text("\(dog.name), \(dog.victories)")
+                Text("\(dog.name):, Wins: \(dog.victories), Losses: \(dog.losses)")
+                
+                
+                
             }
             .navigationTitle("Dogs")
             .navigationBarItems(trailing: Button(action: {

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct playComputer: View {
     
+   
     @State private var labelText = "x"
     
     // Who plays?
@@ -1444,7 +1445,18 @@ struct playComputer: View {
         dataManager.addDog(name: nameDoc, victories: victories,
                            losses: losses, position: position, victoryRate: victoryRate)
         
+        
+        
+        
       
+        
+        var sum = 0
+        for dog in dataManager.dogs {
+            sum += dog.victories
+        }
+        print(sum)
+        
+        
     }
     
     
