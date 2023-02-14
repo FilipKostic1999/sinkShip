@@ -41,12 +41,29 @@ struct menu: View {
                             .background(.blue)
                             .foregroundColor(.black)
                             .font(Font.custom("font1", size: 28))
-                            .position(x: 185, y: 600)
-                        
-                       
+                          
+    
                         
                     }
                     
+                    
+                    
+                    VStack {
+                        
+                        NavigationLink(destination:playComputer()) {
+                            Text("Play against computer")
+                                .padding() // makes background color thick
+                                .background(.blue)
+                                .foregroundColor(.black)
+                                .font(Font.custom("font1", size: 28))
+                                
+                           
+                            
+                        }
+                        
+                        
+                        
+                    }
                     
                     
                     
@@ -56,28 +73,12 @@ struct menu: View {
                 } // Vstack
                       
                 .padding()
-                       
+                .position(x: 200, y: 550)
                 .navigationTitle("Menu")
                 
                 
                 
-                VStack {
-                    
-                    NavigationLink(destination:Stats()) {
-                        Text("Play against computer")
-                            .padding() // makes background color thick
-                            .background(.blue)
-                            .foregroundColor(.black)
-                            .font(Font.custom("font1", size: 28))
-                            .position(x: 200, y: 500)
-                        
-                       
-                        
-                    }
-                    
-                    
-                    
-                }
+                
                 
                  
                
