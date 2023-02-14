@@ -1,17 +1,21 @@
 //
-//  ListView.swift
+//  Stats.swift
 //  sinkShip
 //
-//  Created by Filip Kostic on 2023-02-07.
+//  Created by Filip Kostic on 2023-02-14.
 //
 
 import SwiftUI
 import Firebase
 
-struct ListView: View {
+struct Stats: View {
     
     @EnvironmentObject var dataManager: DataManager
     @State private var showPopup = false
+    
+    
+    
+    
     
     
     var body: some View {
@@ -19,7 +23,7 @@ struct ListView: View {
         NavigationView {
             
             List(dataManager.dogs, id: \.id) { dog in
-                Text(dog.name)
+                Text("\(dog.name), \(dog.victories)")
             }
             .navigationTitle("Dogs")
             .navigationBarItems(trailing: Button(action: {
@@ -31,14 +35,14 @@ struct ListView: View {
                 NewDogView()
             }
         }
-        
-        
     }
 }
 
-struct ListView_Previews: PreviewProvider {
+
+
+struct Stats_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        Stats()
             .environmentObject(DataManager())
+        }
     }
-}

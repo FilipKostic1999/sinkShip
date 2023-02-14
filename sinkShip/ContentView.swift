@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var userIsLoggedIn = false
+    @State private var isShowingDetailView = false
     
     
     var body: some View {
@@ -26,14 +27,39 @@ struct ContentView: View {
             
             
             ZStack {
-                Color.black
+                
+                
+                Image("ocean")
+                .resizable() // allows to change picture
+               // .padding(.horizontal)
+                .ignoresSafeArea()
+                .scaledToFit()   // makes sure to resize only what you change in frame
+                .frame(width: 600, height: 1000)
+                .position(x: 196, y: 420)
+                
+              
                 
                 VStack {
+                    
+                    /*
+                    NavigationView {
+                        VStack {
+                            NavigationLink(destination: Text("Second View"), isActive: $isShowingDetailView) { Menu() }
+
+                            
+                        }
+                        
+                    }
+                    
+                    
+                    */
+                    
                     
                     
                     Text("Sign up")
                         .foregroundColor(.white)
                         .font(.system(size: 40, weight: .bold, design: .rounded))
+                    
                     
                     
                     
@@ -140,6 +166,9 @@ struct ContentView: View {
                         .offset(y: 50)
                         
                         
+                       
+                        
+                        
                     }.frame(width: 350)
                         .onAppear {
                             Auth.auth().addStateDidChangeListener { auth, user in
@@ -150,6 +179,9 @@ struct ContentView: View {
                                 
                             }
                         }
+                    
+                    
+                    
                 } // V
                 
             }.ignoresSafeArea() // ZStack
@@ -174,12 +206,17 @@ struct ContentView: View {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if error != nil {
                 print(error!.localizedDescription)
+            } else {
+                isShowingDetailView = true
             }
             
-            
-        }
-        
-        
+           
+                
+
+                
+                    
+                }
+ 
     }
     
     

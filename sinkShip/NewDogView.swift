@@ -12,6 +12,7 @@ struct NewDogView: View {
     @EnvironmentObject var dataManager: DataManager
     @State private var newDog = ""
     
+    
     var body: some View {
         
         VStack {
@@ -20,7 +21,7 @@ struct NewDogView: View {
             
             Button {
                 
-                dataManager.addDog(dogBreed: newDog)
+             //   dataManager.addDog(name: newDog)
                 
                 
             } label: {

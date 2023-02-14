@@ -35,7 +35,7 @@ struct menu: View {
                 VStack {
                     
                     
-                    NavigationLink(destination:menu().navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination:Stats().navigationBarBackButtonHidden(true)) {
                         Text("Multyplayer")
                             .padding() // makes background color thick
                             .background(.blue)
@@ -63,7 +63,7 @@ struct menu: View {
                 
                 VStack {
                     
-                    NavigationLink(destination:playComputer()) {
+                    NavigationLink(destination:Stats()) {
                         Text("Play against computer")
                             .padding() // makes background color thick
                             .background(.blue)

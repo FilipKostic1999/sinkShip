@@ -171,7 +171,11 @@ struct playComputer: View {
     
     
     @EnvironmentObject var dataManager: DataManager
-    @State private var stats = "player 1 wins"
+    @State private var nameDoc = "Filip"
+    @State private var victories = 99
+    @State private var losses = 9
+    @State private var position = 4
+    @State private var victoryRate = 8.0
     
     
    
@@ -1437,7 +1441,8 @@ struct playComputer: View {
         winner = "Player wins"
         
         
-        dataManager.addDog(dogBreed: stats)
+        dataManager.addDog(name: nameDoc, victories: victories,
+                           losses: losses, position: position, victoryRate: victoryRate)
         
       
     }
