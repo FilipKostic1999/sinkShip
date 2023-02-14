@@ -11,6 +11,11 @@ struct Dog: Identifiable {
     
     var id: String
     var breed : String
+    var name : String
+    var victories : Int
+    var losses : Int
+    var position : Int
+    var victoryRate : Double
     
     
 }

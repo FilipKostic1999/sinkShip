@@ -168,6 +168,12 @@ struct playComputer: View {
     @State private var winner = ""
     
     
+    
+    
+    @EnvironmentObject var dataManager: DataManager
+    @State private var stats = "player 1 wins"
+    
+    
    
     
   
@@ -1429,6 +1435,9 @@ struct playComputer: View {
         
         
         winner = "Player wins"
+        
+        
+        dataManager.addDog(dogBreed: stats)
         
       
     }

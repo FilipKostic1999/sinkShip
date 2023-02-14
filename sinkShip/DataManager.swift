@@ -38,16 +38,22 @@ class DataManager: ObservableObject {
                     
                     let id = data["id"] as? String ?? ""
                     let breed = data["breed"] as? String ?? ""
+                    let name = data["name"] as? String ?? ""
+                    let victories = data["victories"] as? Int ?? 0
+                    let losses = data["losses"] as? Int ?? 0
+                    let position = data["position"] as? Int ?? 0
+                    let victoryRate = data["victoryRate"] as? Double ?? 0
                     
-                    let dog = Dog(id: id, breed: breed)
+                    let dog = Dog(id: id, breed: breed, name: name, victories: victories, losses: losses,
+                    position: position, victoryRate: victoryRate)
                     self.dogs.append(dog)
                 }
             }
             
         }
         
-        
-        
+       
+       
     }
     
     
