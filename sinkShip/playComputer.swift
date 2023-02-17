@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct playComputer: View {
     
@@ -168,6 +169,7 @@ struct playComputer: View {
     @State private var loopStop = false
     @State private var winner = ""
     
+   
     
     
     
@@ -181,8 +183,10 @@ struct playComputer: View {
     
    
     
-  
+    
     var body: some View {
+        
+       
         
         ZStack {
             
@@ -762,6 +766,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                       
                         
                         
                         if (P2C1S1Active == true && player1Turn == true) {
@@ -805,6 +810,8 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                       
+                        
                         if (P2C1S2Active == true && player1Turn == true) {
                             
                             if (shipPresence4 == 2) {
@@ -846,6 +853,8 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                       
+                        
                         if (P2C1S3Active == true && player1Turn == true) {
                             
                             if (shipPresence4 == 3) {
@@ -886,6 +895,8 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                       
+                        
                         if (P2C1S4Active == true && player1Turn == true) {
                             
                             if (shipPresence4 == 4) {
@@ -925,6 +936,8 @@ struct playComputer: View {
                     
                     Button(action: {
                         labelText = "x"
+                        
+                        
                         
                         if (P2C1S5Active == true && player1Turn == true) {
                             
@@ -969,6 +982,8 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                        
+                        
                         if (P2C2S1Active == true && player1Turn == true) {
                             
                             if (shipPresence5 == 1) {
@@ -1009,6 +1024,8 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                        
+                        
                         if (P2C2S2Active == true && player1Turn == true) {
                             
                             if (shipPresence5 == 2) {
@@ -1048,6 +1065,8 @@ struct playComputer: View {
                     
                     Button(action: {
                         labelText = "x"
+                        
+                        
                         
                         if (P2C2S3Active == true && player1Turn == true) {
                             
@@ -1090,6 +1109,9 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                        
+                       
+                        
                         if (P2C2S4Active == true && player1Turn == true) {
                             
                             if (shipPresence5 == 4) {
@@ -1129,6 +1151,8 @@ struct playComputer: View {
                     
                     Button(action: {
                         labelText = "x"
+                        
+                        
                         
                         
                         if (P2C2S5Active == true && player1Turn == true) {
@@ -1173,6 +1197,8 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                        
+                        
                         if (P2C3S1Active == true && player1Turn == true) {
                             
                             if (shipPresence6 == 1) {
@@ -1213,6 +1239,8 @@ struct playComputer: View {
                     
                     Button(action: {
                         labelText = "x"
+                        
+                        
                         
                         if (P2C3S2Active == true && player1Turn == true) {
                             
@@ -1255,6 +1283,8 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
+                        
+                        
                         if (P2C3S3Active == true && player1Turn == true) {
                             
                             if (shipPresence6 == 3) {
@@ -1295,6 +1325,8 @@ struct playComputer: View {
                     
                     Button(action: {
                         labelText = "x"
+                        
+                        
                         
                         if (P2C3S4Active == true && player1Turn == true) {
                             
@@ -1338,6 +1370,8 @@ struct playComputer: View {
                         labelText = "x"
                         
                         
+                        
+                        
                         if (P2C3S5Active == true && player1Turn == true) {
                             
                             if (shipPresence6 == 5) {
@@ -1357,6 +1391,7 @@ struct playComputer: View {
                             } else if self.buttonBackColor30 == .red {
                                 self.buttonBackColor30 = .red
                             }
+                            
                             
                             
                             attackPlayer()
@@ -1442,28 +1477,36 @@ struct playComputer: View {
         winner = "Player wins"
         
         
-        dataManager.addDog(name: nameDoc, victories: victories,
-                           losses: losses, position: position, victoryRate: victoryRate)
-        
-        
-        
+       
         
       
         
         var sum = 0
+        
         for dog in dataManager.dogs {
-            sum += dog.victories
+            sum = sum + dog.victories
+            print("\(dog.victories)")
         }
+        
+        sum = sum + 1
+        
         print(sum)
+        
+        dataManager.addDog(name: nameDoc, victories: sum,
+                           losses: losses, position: position, victoryRate: victoryRate)
         
         
     }
     
     
-    
-    
-    
-    
+    func fetch() {
+        
+        dataManager.fetchDogs()
+        
+        
+        
+        
+    }
     
     
     

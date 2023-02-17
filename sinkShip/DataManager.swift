@@ -12,6 +12,7 @@ import Firebase
 class DataManager: ObservableObject {
     
     @Published var dogs: [Dog] = []
+   
     
     init() {
         fetchDogs()
@@ -21,7 +22,7 @@ class DataManager: ObservableObject {
         
         dogs.removeAll()
         
-        let CurrentUid = Auth.auth().currentUser?.uid //
+        let CurrentUid = Auth.auth().currentUser?.uid
         
         let db = Firestore.firestore()
         let ref = db.collection(CurrentUid!)
