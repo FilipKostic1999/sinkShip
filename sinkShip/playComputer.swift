@@ -170,6 +170,7 @@ struct playComputer: View {
     @State private var winner = ""
     
    
+    @State private var fetchPermission = true
     
     
     
@@ -766,7 +767,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                       
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         
                         if (P2C1S1Active == true && player1Turn == true) {
@@ -810,7 +814,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                       
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         if (P2C1S2Active == true && player1Turn == true) {
                             
@@ -853,7 +860,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                       
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         if (P2C1S3Active == true && player1Turn == true) {
                             
@@ -895,7 +905,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                       
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         if (P2C1S4Active == true && player1Turn == true) {
                             
@@ -937,7 +950,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         if (P2C1S5Active == true && player1Turn == true) {
                             
@@ -982,7 +998,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         if (P2C2S1Active == true && player1Turn == true) {
                             
@@ -1024,7 +1043,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         if (P2C2S2Active == true && player1Turn == true) {
                             
@@ -1066,7 +1088,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         if (P2C2S3Active == true && player1Turn == true) {
                             
@@ -1109,7 +1134,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                        
                         
                         if (P2C2S4Active == true && player1Turn == true) {
@@ -1152,7 +1180,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         
                         if (P2C2S5Active == true && player1Turn == true) {
@@ -1197,7 +1228,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         if (P2C3S1Active == true && player1Turn == true) {
                             
@@ -1240,7 +1274,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         if (P2C3S2Active == true && player1Turn == true) {
                             
@@ -1283,7 +1320,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         if (P2C3S3Active == true && player1Turn == true) {
                             
@@ -1326,7 +1366,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         if (P2C3S4Active == true && player1Turn == true) {
                             
@@ -1369,7 +1412,10 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        
+                        if (fetchPermission) {
+                            fetch()
+                            fetchPermission = false
+                        }
                         
                         
                         if (P2C3S5Active == true && player1Turn == true) {
