@@ -25,7 +25,7 @@ struct Stats: View {
         NavigationView {
             
             List(dataManager.dogs, id: \.id) { dog in
-                Text("\(dog.name):, Wins: \(dog.victories), Losses: \(dog.losses)")
+                Text("\(dog.name): Wins: \(dog.victories), Losses: \(dog.losses), VictoryRate \(dog.victoryRate)")
                 
                 
                 

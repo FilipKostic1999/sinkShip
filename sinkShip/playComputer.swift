@@ -176,10 +176,7 @@ struct playComputer: View {
     
     @EnvironmentObject var dataManager: DataManager
     @State private var nameDoc = "Filip"
-    @State private var victories = 99
-    @State private var losses = 9
-    @State private var position = 4
-    @State private var victoryRate = 8.0
+    
     
     
    
@@ -1527,19 +1524,26 @@ struct playComputer: View {
         
       
         
-        var sum = 0
+        var victories = 0
+        var losses = 0
+        var victoryRate = 0.0
+       
         
         for dog in dataManager.dogs {
-            sum = sum + dog.victories
+            victories = victories + dog.victories
+            losses = losses + dog.losses
+            
             print("\(dog.victories)")
         }
         
-        sum = sum + 1
+        victories = victories + 1
         
-        print(sum)
+        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
         
-        dataManager.addDog(name: nameDoc, victories: sum,
-                           losses: losses, position: position, victoryRate: victoryRate)
+        print(victories)
+        
+        dataManager.addDog(name: nameDoc, victories: victories,
+                           losses: losses, position: 0, victoryRate: victoryRate)
         
         
     }
@@ -1588,6 +1592,28 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
+                        
                     }
                 }
                 break
@@ -1613,6 +1639,30 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
+                        
                         
                     }
                 }
@@ -1640,6 +1690,28 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
+                        
                     }
                 }
                 break
@@ -1665,6 +1737,28 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
                         
                     }
                 }
@@ -1692,6 +1786,28 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
+                        
                     }
                 }
                 break
@@ -1717,6 +1833,28 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
                         
                     }
                 }
@@ -1744,6 +1882,28 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
+                        
                     }
                 }
                 break
@@ -1769,6 +1929,28 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
                         
                     }
                 }
@@ -1796,6 +1978,28 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
+                        
                     }
                 }
                 break
@@ -1821,6 +2025,28 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
                         
                     }
                 }
@@ -1848,6 +2074,28 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
+                        
                     }
                 }
                 break
@@ -1873,6 +2121,28 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
                         
                     }
                 }
@@ -1900,6 +2170,28 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
+                        
                     }
                 }
                 break
@@ -1926,6 +2218,28 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
+                        
                     }
                 }
                 break
@@ -1951,6 +2265,28 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        var victories = 0
+                        var losses = 0
+                        var victoryRate = 0.0
+                       
+                        
+                        for dog in dataManager.dogs {
+                            victories = victories + dog.victories
+                            losses = losses + dog.losses
+                            
+                            print("\(dog.victories)")
+                        }
+                        
+                        losses = losses + 1
+                        
+                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                        
+                        print(victories)
+                        
+                        dataManager.addDog(name: nameDoc, victories: victories,
+                                           losses: losses, position: 0, victoryRate: victoryRate)
+                        
                         
                     }
                 }

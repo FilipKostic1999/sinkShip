@@ -16,12 +16,77 @@ struct ContentView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var userIsLoggedIn = false
+    @State private var backToLogIn = false
     @State private var isShowingDetailView = false
     
     
     var body: some View {
         
+        if (userIsLoggedIn && !backToLogIn) {
+            userIsLoggedView
+        } else if (userIsLoggedIn && backToLogIn){
+            loginView
+        } else if (!userIsLoggedIn && !backToLogIn) {
+            loginView
+        }
        
+ 
+            
+            
+        } // body
+    
+    
+    
+    
+    var userIsLoggedView: some View {
+        
+        ZStack {
+            
+            Image("ocean")
+            .resizable() // allows to change picture
+           // .padding(.horizontal)
+            .ignoresSafeArea()
+            .scaledToFit()   // makes sure to resize only what you change in frame
+            .frame(width: 600, height: 1000)
+            .position(x: 196, y: 420)
+            
+            VStack {
+                
+                Text("You are logged")
+                
+                Button {
+                   
+                    
+                    
+                } label: {
+                    Text("Log out")
+                        .bold()
+                        .frame(width: 200, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                            
+                        )
+                        .foregroundColor(.white)
+                    
+                }
+                .padding()
+                .offset(y: 40)
+                
+                
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+        
+        
+    var loginView: some View {
         
         NavigationView {
             
@@ -151,7 +216,7 @@ struct ContentView: View {
                             
                             login()
                            
-                           
+                          
                             
                             
                             
@@ -173,7 +238,7 @@ struct ContentView: View {
                         .onAppear {
                             Auth.auth().addStateDidChangeListener { auth, user in
                                 if user != nil {
-                                    userIsLoggedIn.toggle()
+                                    userIsLoggedIn = true
                                     
                                 }
                                 
@@ -189,13 +254,10 @@ struct ContentView: View {
             
         } // nav
         
- 
-            
-            
-        } // body
         
         
         
+    }
     
     
  
@@ -220,6 +282,8 @@ struct ContentView: View {
     }
     
     
+   
+    
     func register() {
         
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
@@ -242,134 +306,6 @@ struct ContentView: View {
 
 
 
-struct logInConfirmation : View {
-    
-    var body: some View {
-        
-        Text("dbvu")
-        
-        
-    }
-    
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @State private var showPopup = false
-
-/*
-struct ContentView : View {
-    
-    var body: some View {
-        
-        
-        
-        NavigationView {
-        
-                    
-                    
-            ZStack {
-                
-                Color.gray
-                    .ignoresSafeArea()
-                
-                
-                        
-            Image("shipBackground")
-            .resizable() // allows to change picture
-           // .padding(.horizontal)
-            .scaledToFit()   // makes sure to resize only what you change in frame
-          //  .frame(height: 600)
-            .position(x: 196, y: 110)
-                            
-            
-                            
-                            
-                VStack {
-                    
-                    
-                    NavigationLink(destination:menu().navigationBarBackButtonHidden(true)) {
-                        Text("Local game")
-                            .padding() // makes background color thick
-                            .background(.blue)
-                            .foregroundColor(.black)
-                            .font(Font.custom("font1", size: 28))
-                            .position(x: 185, y: 600)
-                        
-                       
-                        
-                    }
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                } // Vstack
-                      
-                .padding()
-                       
-                .navigationTitle("Log in")
-                
-                
-                
-                VStack {
-                    
-                    NavigationLink(destination:menu().navigationBarBackButtonHidden(true)) {
-                        Text("Log in")
-                            .padding() // makes background color thick
-                            .background(.blue)
-                            .foregroundColor(.black)
-                            .font(Font.custom("font1", size: 28))
-                            .position(x: 200, y: 500)
-                        
-                       
-                        
-                    }
-                    
-                    
-                    
-                }
-                
-                 
-               
-            } // Zstack
-            
-            
-            
-            
-           
-                    
-            } // nav
-        
-        
-        
-        
-    }
-    
-}
-
-
-
-
-
-
-
-*/
 
 
 
