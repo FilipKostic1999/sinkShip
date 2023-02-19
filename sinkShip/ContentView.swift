@@ -18,6 +18,7 @@ struct ContentView: View {
     @State private var userIsLoggedIn = false
     @State private var backToLogIn = false
     @State private var isShowingDetailView = false
+    @State private var isCreateAccountPressed = false
     
     
     var body: some View {
@@ -25,12 +26,17 @@ struct ContentView: View {
         if (userIsLoggedIn && !backToLogIn) {
             userIsLoggedView
         } else if (userIsLoggedIn && backToLogIn){
-            loginView
+            if (isCreateAccountPressed) {
+                createAccountView
+            } else if (!isCreateAccountPressed) {
+                loginView
+            }
         } else if (!userIsLoggedIn && !backToLogIn) {
             loginView
         }
        
  
+        
             
             
         } // body
@@ -38,57 +44,9 @@ struct ContentView: View {
     
     
     
-    var userIsLoggedView: some View {
+    var createAccountView: some View {
         
-        ZStack {
-            
-            Image("ocean")
-            .resizable() // allows to change picture
-           // .padding(.horizontal)
-            .ignoresSafeArea()
-            .scaledToFit()   // makes sure to resize only what you change in frame
-            .frame(width: 600, height: 1000)
-            .position(x: 196, y: 420)
-            
-            VStack {
-                
-                Text("You are logged")
-                
-                Button {
-                   
-                    
-                    
-                } label: {
-                    Text("Log out")
-                        .bold()
-                        .frame(width: 200, height: 40)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
-                            
-                        )
-                        .foregroundColor(.white)
-                    
-                }
-                .padding()
-                .offset(y: 40)
-                
-                
-                
-            }
-            
-        }
-        
-    }
-    
-    
-    
-    
-        
-        
-    var loginView: some View {
-        
-        NavigationView {
+      NavigationView  {
             
             
             ZStack {
@@ -121,7 +79,7 @@ struct ContentView: View {
                     
                     
                     
-                    Text("Sign up")
+                    Text("Create account")
                         .foregroundColor(.white)
                         .font(.system(size: 40, weight: .bold, design: .rounded))
                     
@@ -169,10 +127,256 @@ struct ContentView: View {
                         
                         Button {
                             
-                            register()
+                        register()
                             
                         } label: {
-                            Text("Sign Up")
+                            Text("Register")
+                                .bold()
+                                .frame(width: 200, height: 40)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                                    
+                                )
+                                .foregroundColor(.white)
+                            
+                        }
+                        .padding()
+                        .offset(y: 40)
+                        
+                        
+                        
+                        
+                     
+                        
+                        Button {
+                            
+                        
+                           isCreateAccountPressed = false
+                          
+                            
+                            
+                            
+                        } label: {
+                            
+                            Text("Back to login")
+                                .bold()
+                                .frame(width: 200, height: 40)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                                    
+                                )
+                                .foregroundColor(.white)
+                            
+                            
+                        }
+                        .padding(.top)
+                        .offset(y: 50)
+                        
+                        
+                       
+                        
+                        
+                    }.frame(width: 350)
+                    
+                    /*
+                    
+                        .onAppear {
+                            Auth.auth().addStateDidChangeListener { auth, user in
+                                if user != nil {
+                                    userIsLoggedIn = true
+                                    
+                                }
+                                
+                            }
+                        }
+                    
+                    */
+                    
+                } // V
+                
+            }.ignoresSafeArea() // ZStack
+            
+            
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    var userIsLoggedView: some View {
+        
+        NavigationView {
+        
+        ZStack {
+            
+            Image("ocean")
+                .resizable() // allows to change picture
+            // .padding(.horizontal)
+                .ignoresSafeArea()
+                .scaledToFit()   // makes sure to resize only what you change in frame
+                .frame(width: 600, height: 1000)
+                .position(x: 196, y: 420)
+            
+            VStack {
+                
+                Text("You are logged")
+                
+                Button {
+                    
+                   
+                    backToLogIn = true
+                    
+                } label: {
+                    Text("Log out")
+                        .bold()
+                        .frame(width: 200, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                            
+                        )
+                        .foregroundColor(.white)
+                    
+                }
+                .padding()
+                .offset(y: 40)
+                
+                
+                
+                VStack {
+                    
+                    
+                    NavigationLink(destination:menu()) {
+                        Text("Local game")
+                            .bold()
+                            .frame(width: 200, height: 40)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                                
+                            )
+                            .foregroundColor(.white)
+                        
+                    }
+                    
+                    
+                }
+                .padding()
+                .offset(y: 40)
+                
+                
+                
+                
+            }
+            
+        }
+        .ignoresSafeArea()
+        
+    }
+        
+    }
+    
+    
+    
+    
+        
+        
+    var loginView: some View {
+        
+        NavigationView {
+            
+            
+            ZStack {
+                
+                
+                Image("ocean")
+                .resizable() // allows to change picture
+               // .padding(.horizontal)
+                .ignoresSafeArea()
+                .scaledToFit()   // makes sure to resize only what you change in frame
+                .frame(width: 600, height: 1000)
+                .position(x: 196, y: 420)
+                
+              
+                
+                VStack {
+                    
+                    /*
+                    NavigationView {
+                        VStack {
+                            NavigationLink(destination: Text("Second View"), isActive: $isShowingDetailView) { Menu() }
+
+                            
+                        }
+                        
+                    }
+                    
+                    
+                    */
+                    
+                    
+                    
+                    Text("Login")
+                        .foregroundColor(.white)
+                        .font(.system(size: 40, weight: .bold, design: .rounded))
+                    
+                    
+                    
+                    
+                    Image("shipBackground")
+                        .resizable() // allows to change picture
+                    // .padding(.horizontal)
+                        .scaledToFit()   // makes sure to resize only what you change in frame
+                    //  .frame(height: 600)
+                    
+                    
+                    
+                    VStack(spacing: 20) {
+                        
+                        
+                        
+                        TextField("Email", text: $email)
+                            .foregroundColor(.white)
+                            .textFieldStyle(.plain)
+                            .placeholder(when: email.isEmpty) {
+                                Text("Email")
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }
+                        
+                        Rectangle()
+                            .frame(width: 350, height: 1)
+                            .foregroundColor(.white)
+                        
+                        SecureField("Password", text: $password)
+                            .foregroundColor(.white)
+                            .textFieldStyle(.plain)
+                            .placeholder(when: password.isEmpty) {
+                                Text("Password")
+                                    .foregroundColor(.white)
+                                    .bold()
+                                
+                            }
+                        
+                        Rectangle()
+                            .frame(width: 350, height: 1)
+                            .foregroundColor(.white)
+                        
+                        Button {
+                     
+                            
+                            login()
+                            
+                        } label: {
+                            Text("Login")
                                 .bold()
                                 .frame(width: 200, height: 40)
                                 .background(
@@ -201,10 +405,7 @@ struct ContentView: View {
                                         
                                     )
                                     .foregroundColor(.white)
-                                
-                                
-                                
-                                
+          
                             }
                             
  
@@ -214,17 +415,18 @@ struct ContentView: View {
                         
                         Button {
                             
-                            login()
-                           
+                        
+                           isCreateAccountPressed = true
                           
                             
                             
                             
                         } label: {
                             
-                            Text("Already have an account? Log in here")
+                            Text("Not registered yet? Create an account here")
                                 .bold()
                                 .foregroundColor(.white)
+                            
                             
                         }
                         .padding(.top)
@@ -238,7 +440,8 @@ struct ContentView: View {
                         .onAppear {
                             Auth.auth().addStateDidChangeListener { auth, user in
                                 if user != nil {
-                                    userIsLoggedIn = true
+                                 
+                                        userIsLoggedIn = true
                                     
                                 }
                                 
@@ -269,7 +472,8 @@ struct ContentView: View {
             if error != nil {
                 print(error!.localizedDescription)
             } else {
-                isShowingDetailView = true
+                userIsLoggedIn = true
+                backToLogIn = false
             }
             
            

@@ -24,6 +24,7 @@
 		C179CEBF2992A78F005E1EAC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEBE2992A78F005E1EAC /* DataManager.swift */; };
 		C179CEC12992CB42005E1EAC /* NewDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEC02992CB41005E1EAC /* NewDogView.swift */; };
 		C179CEC3299BC822005E1EAC /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEC2299BC822005E1EAC /* Stats.swift */; };
+		C179CEC529A292D3005E1EAC /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEC429A292D3005E1EAC /* profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		C179CEBE2992A78F005E1EAC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C179CEC02992CB41005E1EAC /* NewDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogView.swift; sourceTree = "<group>"; };
 		C179CEC2299BC822005E1EAC /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		C179CEC429A292D3005E1EAC /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				C179CEBC2992A6A3005E1EAC /* Dog.swift */,
 				C179CEBE2992A78F005E1EAC /* DataManager.swift */,
 				C179CEC02992CB41005E1EAC /* NewDogView.swift */,
+				C179CEC429A292D3005E1EAC /* profile.swift */,
 			);
 			path = sinkShip;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				C145C3AB2985C318000FC441 /* ContentView.swift in Sources */,
 				C179CEC3299BC822005E1EAC /* Stats.swift in Sources */,
 				C11EBB1A2986F9CB00C45AE8 /* menu.swift in Sources */,
+				C179CEC529A292D3005E1EAC /* profile.swift in Sources */,
 				C179CEC12992CB42005E1EAC /* NewDogView.swift in Sources */,
 				C179CEBD2992A6A3005E1EAC /* Dog.swift in Sources */,
 				C179CEBF2992A78F005E1EAC /* DataManager.swift in Sources */,
