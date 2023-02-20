@@ -794,6 +794,8 @@ struct playComputer: View {
                             attackPlayer()
                             
                             
+                            
+                            
                             P2C1S1Active = false
                            // player1Turn = false
                         }

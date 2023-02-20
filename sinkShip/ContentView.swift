@@ -21,6 +21,8 @@ struct ContentView: View {
     @State private var isCreateAccountPressed = false
     
     @State private var name = ""
+    @State private var nameDoc = ""
+    @EnvironmentObject var dataManager: DataManager
     
     
     var body: some View {
@@ -285,9 +287,35 @@ struct ContentView: View {
                 
                 
                 
-                Text("You are logged \(name)")
+                Text("You are logged \(nameDoc)")
                     .foregroundColor(.white)
                     .font(.system(size: 20, weight: .bold, design: .rounded))
+                
+                
+                
+                
+                
+                
+                Button {
+                    
+                  createName()
+                    
+                    
+                } label: {
+                    Text("Change name")
+                        .bold()
+                        .frame(width: 200, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                            
+                        )
+                        .foregroundColor(.white)
+                    
+                }
+                .padding()
+                .offset(y: 40)
+                
                 
                 
                
@@ -295,7 +323,23 @@ struct ContentView: View {
                     
                 Button {
                     
-                    backToLogIn = false
+                   
+                    
+                    var victories = 0
+                    var losses = 0
+                    var victoryRate = 0.0
+                   
+                    
+                    
+                    for dog in dataManager.dogs {
+                        nameDoc = dog.name
+                        victories = victories + dog.victories
+                        losses = losses + dog.losses
+                        
+                        print("\(dog.victories)")
+                    }
+                    
+                    
                     
                     
                 } label: {
@@ -324,7 +368,7 @@ struct ContentView: View {
                     
                     Button {
                         
-                        
+                        backToLogIn = true
                         
                         
                     } label: {
@@ -541,6 +585,10 @@ struct ContentView: View {
                             Auth.auth().addStateDidChangeListener { auth, user in
                                 if user != nil {
                                  
+                                    dataManager.fetchDogs()
+                                    
+                                    
+                                    
                                         userIsLoggedIn = true
                                     
                                 }
@@ -603,6 +651,57 @@ struct ContentView: View {
         
         
     }
+    
+    
+    
+    
+    
+    func createName() {
+        
+        
+        
+        
+        var oldName = "danilo"
+        var nameDoc = name
+        var victories = 0
+        var losses = 0
+        var victoryRate = 0.0
+       
+        
+        for dog in dataManager.dogs {
+            oldName = dog.name
+            nameDoc = name
+            victories = victories + dog.victories
+            losses = losses + dog.losses
+            
+            
+            
+            print("\(dog.victories)")
+        }
+        
+        
+        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+        
+        print(victories)
+        
+        dataManager.addDog(name: nameDoc, victories: victories,
+                           losses: losses, position: 0, victoryRate: victoryRate)
+        
+        
+        dataManager.deleteDoc(name: oldName)
+        
+        
+        
+       
+        backToLogIn = true
+        
+        
+    }
+    
+    
+    
+    
+    
     
     
     

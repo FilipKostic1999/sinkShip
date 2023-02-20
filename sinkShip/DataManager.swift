@@ -71,7 +71,29 @@ class DataManager: ObservableObject {
         }
         
         
+        
     }
+    
+    
+    
+    func deleteDoc(name: String) {
+        
+        let CurrentUid = Auth.auth().currentUser?.uid //
+        
+        let db = Firestore.firestore()
+        let ref = db.collection(CurrentUid!).document(name)
+        ref.delete() { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        
+        
+    }
+    
+    
+    
     
     
 }
