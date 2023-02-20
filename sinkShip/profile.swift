@@ -17,6 +17,10 @@ struct profile: View {
         
         ZStack {
             
+            
+            
+            
+            
             Image("ocean")
                 .resizable() // allows to change picture
             // .padding(.horizontal)
@@ -27,23 +31,94 @@ struct profile: View {
             
             
             
+            
             VStack {
                 
-                
-                TextField("", text: $name)
+                Text("Profile")
                     .foregroundColor(.white)
-                    .textFieldStyle(.plain)
-                    .placeholder(when: name.isEmpty) {
-                        Text("Write your name")
+                    .font(.system(size: 40, weight: .bold, design: .rounded))
+                
+                
+                
+                
+             
+           
+                    
+                    
+                    HStack {
+                        
+                        
+                        
+                        
+                        Image("anonimou")
+                            .resizable() // allows to change picture
+                        // .padding(.horizontal)
+                            .ignoresSafeArea()
+                            .scaledToFit()   // makes sure to resize only what you change in frame
+                            .frame(width: 160, height: 200)
+                        //  .position(x: 196, y: 420)
+                        
+                        
+                        
+                        
+                        
+                        TextField("", text: $name)
                             .foregroundColor(.white)
-                            .bold()
+                            .textFieldStyle(.plain)
+                            .placeholder(when: name.isEmpty) {
+                                Text("Write your name")
+                                    .foregroundColor(.black)
+                                
+                                    .bold()
+                                    .frame(width: 200, height: 40)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                            .fill(.linearGradient(colors: [.white, .white], startPoint: .top, endPoint: .bottomTrailing))
+                                        
+                                    )
+                            }
+                        
                     }
                 
                 
                 
+                
+                Text("You are logged \(name)")
+                    .foregroundColor(.white)
+                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                
+                
+               
+                    
+                    
+                Button {
+                    
+                  //  backToLogIn = false
+                    
+                    
+                } label: {
+                    Text("Refresh profile")
+                        .bold()
+                        .frame(width: 200, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                            
+                        )
+                        .foregroundColor(.white)
+                    
+                }
+                .padding()
+                .offset(y: 40)
+                
+                
+                
+                    
+                
+                
                 VStack {
                     
-                    Text("You are logged")
+                    
                     
                     Button {
                         
@@ -51,7 +126,7 @@ struct profile: View {
                         
                         
                     } label: {
-                        Text("Log out")
+                        Text("Back to login")
                             .bold()
                             .frame(width: 200, height: 40)
                             .background(
@@ -82,6 +157,10 @@ struct profile: View {
                                 .foregroundColor(.white)
                             
                         }
+                        
+                        
+                        
+                        
                         
                         
                     }
