@@ -15,6 +15,7 @@
 		C145C3BA2985C31A000FC441 /* sinkShipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145C3B92985C31A000FC441 /* sinkShipTests.swift */; };
 		C145C3C42985C31A000FC441 /* sinkShipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145C3C32985C31A000FC441 /* sinkShipUITests.swift */; };
 		C145C3C62985C31A000FC441 /* sinkShipUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145C3C52985C31A000FC441 /* sinkShipUITestsLaunchTests.swift */; };
+		C169186E29A6A34E00FA31B3 /* multiPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169186D29A6A34E00FA31B3 /* multiPlayer.swift */; };
 		C179CEB02988372C005E1EAC /* playComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEAF2988372C005E1EAC /* playComputer.swift */; };
 		C179CEB3298D566F005E1EAC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C179CEB2298D566F005E1EAC /* FirebaseAuth */; };
 		C179CEB5298D566F005E1EAC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C179CEB4298D566F005E1EAC /* FirebaseFirestore */; };
@@ -57,6 +58,7 @@
 		C145C3BF2985C31A000FC441 /* sinkShipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sinkShipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C145C3C32985C31A000FC441 /* sinkShipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sinkShipUITests.swift; sourceTree = "<group>"; };
 		C145C3C52985C31A000FC441 /* sinkShipUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sinkShipUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C169186D29A6A34E00FA31B3 /* multiPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multiPlayer.swift; sourceTree = "<group>"; };
 		C179CEAF2988372C005E1EAC /* playComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playComputer.swift; sourceTree = "<group>"; };
 		C179CEB6298D5E25005E1EAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C179CEBA2992A642005E1EAC /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				C145C3A82985C318000FC441 /* sinkShipApp.swift */,
 				C145C3AA2985C318000FC441 /* ContentView.swift */,
+				C169186D29A6A34E00FA31B3 /* multiPlayer.swift */,
 				C179CEC629A633B0005E1EAC /* globalStats.swift */,
 				C145C3AC2985C31A000FC441 /* Assets.xcassets */,
 				C179CEB6298D5E25005E1EAC /* GoogleService-Info.plist */,
@@ -303,6 +306,7 @@
 				C179CEC3299BC822005E1EAC /* Stats.swift in Sources */,
 				C11EBB1A2986F9CB00C45AE8 /* menu.swift in Sources */,
 				C179CEC529A292D3005E1EAC /* profile.swift in Sources */,
+				C169186E29A6A34E00FA31B3 /* multiPlayer.swift in Sources */,
 				C179CEC12992CB42005E1EAC /* NewDogView.swift in Sources */,
 				C179CEBD2992A6A3005E1EAC /* Dog.swift in Sources */,
 				C179CEBF2992A78F005E1EAC /* DataManager.swift in Sources */,

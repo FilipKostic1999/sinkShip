@@ -51,7 +51,7 @@ struct menu: View {
                 VStack {
                     
                     
-                    NavigationLink(destination:Stats().navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination:multiPlayer().navigationBarBackButtonHidden(true)) {
                         Text("Multyplayer")
                             .bold()
                             .frame(width: 200, height: 40)
