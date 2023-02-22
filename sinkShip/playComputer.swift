@@ -1595,6 +1595,9 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        winner = "computer wins"
+                        
+                        
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
@@ -1642,6 +1645,8 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        winner = "computer wins"
                         
                         
                         var victories = 0
@@ -1693,6 +1698,8 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        winner = "computer wins"
+                        
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
@@ -1740,6 +1747,8 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        winner = "computer wins"
                         
                         var victories = 0
                         var losses = 0
@@ -1789,6 +1798,8 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        winner = "computer wins"
+                        
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
@@ -1836,6 +1847,8 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        winner = "computer wins"
                         
                         var victories = 0
                         var losses = 0
@@ -1885,6 +1898,8 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        winner = "computer wins"
+                        
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
@@ -1932,6 +1947,8 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        winner = "computer wins"
                         
                         var victories = 0
                         var losses = 0
@@ -1981,6 +1998,8 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        winner = "computer wins"
+                        
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
@@ -2028,6 +2047,8 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        winner = "computer wins"
                         
                         var victories = 0
                         var losses = 0
@@ -2077,6 +2098,8 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        winner = "computer wins"
+                        
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
@@ -2124,6 +2147,8 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        winner = "computer wins"
                         
                         var victories = 0
                         var losses = 0
@@ -2173,6 +2198,8 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        winner = "computer wins"
+                        
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
@@ -2221,6 +2248,8 @@ struct playComputer: View {
                         P2C3S4Active = false
                         P2C3S5Active = false
                         
+                        winner = "computer wins"
+                        
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
@@ -2268,6 +2297,8 @@ struct playComputer: View {
                         P2C3S3Active = false
                         P2C3S4Active = false
                         P2C3S5Active = false
+                        
+                        winner = "computer wins"
                         
                         var victories = 0
                         var losses = 0
