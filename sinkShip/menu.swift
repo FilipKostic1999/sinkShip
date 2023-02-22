@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct menu: View {
+    
+    
+    @EnvironmentObject var dataManager: DataManager
+    
+    
+    
     var body: some View {
         
         NavigationView {
@@ -28,6 +34,16 @@ struct menu: View {
             .scaledToFit()   // makes sure to resize only what you change in frame
             .frame(height: 800)
             .position(x: 196, y: 300)
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                             
             
                             
@@ -63,8 +79,32 @@ struct menu: View {
                         
                         
                         
+                        VStack {
+                            
+                            NavigationLink(destination:Stats()) {
+                                Text("Show Stats")
+                                    .padding() // makes background color thick
+                                    .background(.blue)
+                                    .foregroundColor(.black)
+                                    .font(Font.custom("font1", size: 28))
+                                    
+                               
+                                
+                            }
+                            
+                            
+                            
+                        }
+                        
+                        
+                        
+                        
                     }
                     
+                    
+                    
+                    
+                  
                     
                     
                     

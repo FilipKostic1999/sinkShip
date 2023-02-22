@@ -514,10 +514,16 @@ struct ContentView: View {
                             .frame(width: 350, height: 1)
                             .foregroundColor(.white)
                         
+                        
+                        
+                        
+                        
+                        
+                        
                         Button {
                      
-                            
                             login()
+                           
                             
                         } label: {
                             Text("Login")
@@ -661,7 +667,7 @@ struct ContentView: View {
         
         
         
-        var oldName = "danilo"
+        var oldName = "danilo3456787543456789"
         var nameDoc = name
         var victories = 0
         var losses = 0

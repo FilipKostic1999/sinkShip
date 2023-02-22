@@ -14,7 +14,7 @@ struct Stats: View {
     @State private var showPopup = false
     
     
-    @State private var winningRate = 0
+    @State private var showStats = 2
     
     
     
@@ -22,24 +22,56 @@ struct Stats: View {
     
     var body: some View {
         
-        NavigationView {
+        VStack {
             
-            List(dataManager.dogs, id: \.id) { dog in
-                Text("\(dog.name): Wins: \(dog.victories), Losses: \(dog.losses), VictoryRate \(dog.victoryRate)")
+       
+               
+            List(dataManager.publicDogs) { publicDog in
+                Text("\(publicDog.name): Wins: \(publicDog.victories), Losses: \(publicDog.losses), VictoryRate \(publicDog.victoryRate)")
                 
                 
-                
-            }
-            .navigationTitle("Dogs")
-            .navigationBarItems(trailing: Button(action: {
-                showPopup.toggle()
-            }, label: {
-                Image(systemName: "plus")
-            }))
-            .sheet(isPresented: $showPopup) {
-                NewDogView()
-            }
+            
+                   
+                   
         }
+           
+            
+            
+            
+            
+            
+            VStack {
+                
+                Button {
+             
+                    showStats = 2
+                   
+                    
+                } label: {
+                    Text("Login")
+                        .bold()
+                        .frame(width: 200, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                            
+                        )
+                        .foregroundColor(.white)
+                    
+                }
+                .padding()
+                .offset(y: 40)
+                
+                
+                
+            }
+            
+            
+            
+                
+        }
+            
+        
     }
 }
 

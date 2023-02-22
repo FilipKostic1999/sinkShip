@@ -175,7 +175,7 @@ struct playComputer: View {
     
     
     @EnvironmentObject var dataManager: DataManager
-    @State private var nameDoc = "Filip"
+    @State private var nameDoc = "nameless user"
     
     
     
@@ -1532,6 +1532,7 @@ struct playComputer: View {
        
         
         for dog in dataManager.dogs {
+            nameDoc = dog.name
             victories = victories + dog.victories
             losses = losses + dog.losses
             
@@ -1597,9 +1598,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -1646,9 +1647,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -1695,9 +1696,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -1743,9 +1744,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -1791,9 +1792,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -1839,9 +1840,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -1887,9 +1888,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -1935,9 +1936,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -1983,9 +1984,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -2031,9 +2032,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -2079,9 +2080,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -2127,9 +2128,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -2175,9 +2176,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -2223,9 +2224,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -2271,9 +2272,9 @@ struct playComputer: View {
                         var victories = 0
                         var losses = 0
                         var victoryRate = 0.0
-                       
                         
                         for dog in dataManager.dogs {
+                            nameDoc = dog.name
                             victories = victories + dog.victories
                             losses = losses + dog.losses
                             
@@ -2288,7 +2289,6 @@ struct playComputer: View {
                         
                         dataManager.addDog(name: nameDoc, victories: victories,
                                            losses: losses, position: 0, victoryRate: victoryRate)
-                        
                         
                     }
                 }

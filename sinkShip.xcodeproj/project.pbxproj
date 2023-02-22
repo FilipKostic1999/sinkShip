@@ -25,6 +25,7 @@
 		C179CEC12992CB42005E1EAC /* NewDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEC02992CB41005E1EAC /* NewDogView.swift */; };
 		C179CEC3299BC822005E1EAC /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEC2299BC822005E1EAC /* Stats.swift */; };
 		C179CEC529A292D3005E1EAC /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEC429A292D3005E1EAC /* profile.swift */; };
+		C179CEC729A633B1005E1EAC /* globalStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C179CEC629A633B0005E1EAC /* globalStats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		C179CEC02992CB41005E1EAC /* NewDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDogView.swift; sourceTree = "<group>"; };
 		C179CEC2299BC822005E1EAC /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		C179CEC429A292D3005E1EAC /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
+		C179CEC629A633B0005E1EAC /* globalStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalStats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			children = (
 				C145C3A82985C318000FC441 /* sinkShipApp.swift */,
 				C145C3AA2985C318000FC441 /* ContentView.swift */,
+				C179CEC629A633B0005E1EAC /* globalStats.swift */,
 				C145C3AC2985C31A000FC441 /* Assets.xcassets */,
 				C179CEB6298D5E25005E1EAC /* GoogleService-Info.plist */,
 				C145C3AE2985C31A000FC441 /* Preview Content */,
@@ -303,6 +306,7 @@
 				C179CEC12992CB42005E1EAC /* NewDogView.swift in Sources */,
 				C179CEBD2992A6A3005E1EAC /* Dog.swift in Sources */,
 				C179CEBF2992A78F005E1EAC /* DataManager.swift in Sources */,
+				C179CEC729A633B1005E1EAC /* globalStats.swift in Sources */,
 				C179CEBB2992A642005E1EAC /* ListView.swift in Sources */,
 				C179CEB02988372C005E1EAC /* playComputer.swift in Sources */,
 				C145C3A92985C318000FC441 /* sinkShipApp.swift in Sources */,
