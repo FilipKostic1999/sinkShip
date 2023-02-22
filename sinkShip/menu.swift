@@ -53,25 +53,31 @@ struct menu: View {
                     
                     NavigationLink(destination:Stats().navigationBarBackButtonHidden(true)) {
                         Text("Multyplayer")
-                            .padding() // makes background color thick
-                            .background(.blue)
-                            .foregroundColor(.black)
-                            .font(Font.custom("font1", size: 28))
-                          
-    
-                        
+                            .bold()
+                            .frame(width: 200, height: 40)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                                
+                            )
+                            .foregroundColor(.white)
+        
                     }
                     
                     
                     
                     VStack {
                         
-                        NavigationLink(destination:playComputer()) {
+                        NavigationLink(destination:playComputer().navigationBarBackButtonHidden(true)) {
                             Text("Play against computer")
-                                .padding() // makes background color thick
-                                .background(.blue)
-                                .foregroundColor(.black)
-                                .font(Font.custom("font1", size: 28))
+                                .bold()
+                                .frame(width: 200, height: 40)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                                    
+                                )
+                                .foregroundColor(.white)
                                 
                            
                             
@@ -81,12 +87,16 @@ struct menu: View {
                         
                         VStack {
                             
-                            NavigationLink(destination:Stats()) {
+                            NavigationLink(destination:Stats().navigationBarBackButtonHidden(true)) {
                                 Text("Show Stats")
-                                    .padding() // makes background color thick
-                                    .background(.blue)
-                                    .foregroundColor(.black)
-                                    .font(Font.custom("font1", size: 28))
+                                    .bold()
+                                    .frame(width: 200, height: 40)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                            .fill(.linearGradient(colors: [.blue, .blue], startPoint: .top, endPoint: .bottomTrailing))
+                                        
+                                    )
+                                    .foregroundColor(.white)
                                     
                                
                                 

@@ -14,28 +14,22 @@ struct Stats: View {
     @State private var showPopup = false
     
     
-    @State private var showStats = 2
-    
+    @State private var showStats = 1
+    @State private var whichStats = "Show global"
     
     
     
     
     var body: some View {
         
-        VStack {
-            
        
-               
-            List(dataManager.publicDogs) { publicDog in
-                Text("\(publicDog.name): Wins: \(publicDog.victories), Losses: \(publicDog.losses), VictoryRate \(publicDog.victoryRate)")
-                
-                
             
-                   
-                   
-        }
-           
             
+            if (showStats == 1) {
+                localStatistics
+            } else if (showStats == 2) {
+                globalStatistic
+            }
             
             
             
@@ -43,12 +37,21 @@ struct Stats: View {
             VStack {
                 
                 Button {
-             
-                    showStats = 2
-                   
+                    
+                    dataManager.fetchDogs()
+                    
+                    
+                    
+                    if (showStats == 1) {
+                        showStats = 2
+                        whichStats = "Show your stats"
+                    } else if (showStats == 2) {
+                        showStats = 1
+                        whichStats = "Show global"
+                    }
                     
                 } label: {
-                    Text("Login")
+                    Text("\(whichStats)")
                         .bold()
                         .frame(width: 200, height: 40)
                         .background(
@@ -62,17 +65,58 @@ struct Stats: View {
                 .padding()
                 .offset(y: 40)
                 
-                
-                
+                   
             }
             
-            
+        
             
                 
+    }
+            
+        
+    
+    
+    
+    
+    var globalStatistic: some View {
+        
+        VStack {
+            
+            List(dataManager.publicDogs, id: \.name) { publicDog in
+                Text("\(publicDog.name): Wins: \(publicDog.victories), Losses: \(publicDog.losses), VictoryRate \(publicDog.victoryRate)")
+                
+            }
         }
+        .navigationTitle("Global")
             
         
     }
+    
+    
+    var localStatistics: some View {
+        
+        VStack {
+            
+            List(dataManager.dogs, id: \.name) { dog in
+                Text("\(dog.name): Wins: \(dog.victories), Losses: \(dog.losses), VictoryRate \(dog.victoryRate)")
+                
+            }
+            
+        }
+        .navigationTitle("Your statistic")
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 

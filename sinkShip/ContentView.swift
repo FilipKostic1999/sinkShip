@@ -675,6 +675,12 @@ struct ContentView: View {
        
         
         for dog in dataManager.dogs {
+            
+            victories = 0
+            losses = 0
+            victoryRate = 0.0
+            
+            
             oldName = dog.name
             nameDoc = name
             victories = victories + dog.victories
@@ -690,11 +696,15 @@ struct ContentView: View {
         
         print(victories)
         
+        
+        dataManager.deleteDoc(name: oldName)
+        
+        
         dataManager.addDog(name: nameDoc, victories: victories,
                            losses: losses, position: 0, victoryRate: victoryRate)
         
         
-        dataManager.deleteDoc(name: oldName)
+        
         
         
         
