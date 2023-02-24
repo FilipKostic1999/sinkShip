@@ -83,7 +83,7 @@ struct Stats: View {
         VStack {
             
             List(dataManager.publicDogs, id: \.name) { publicDog in
-                Text("\(publicDog.name): Wins: \(publicDog.victories), Losses: \(publicDog.losses), VictoryRate \(publicDog.victoryRate)")
+                Text("\(publicDog.name): Wins: \(publicDog.victories), Losses: \(publicDog.losses), VictoryRate \(publicDog.victoryRate)%")
                 
             }
         }
@@ -98,7 +98,7 @@ struct Stats: View {
         VStack {
             
             List(dataManager.dogs, id: \.name) { dog in
-                Text("\(dog.name): Wins: \(dog.victories), Losses: \(dog.losses), VictoryRate \(dog.victoryRate)")
+                Text("\(dog.name): Wins: \(dog.victories), Losses: \(dog.losses), VictoryRate \(dog.victoryRate)%")
                 
             }
             

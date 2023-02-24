@@ -175,6 +175,7 @@ struct playComputer: View {
     
     
     @EnvironmentObject var dataManager: DataManager
+    let CurrentUid = Auth.auth().currentUser?.uid
     @State private var nameDoc = "nameless user"
     
     
@@ -764,7 +765,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -813,7 +814,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -859,7 +860,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -904,7 +905,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -949,7 +950,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -997,7 +998,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -1042,7 +1043,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -1087,7 +1088,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -1133,7 +1134,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -1179,7 +1180,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -1227,7 +1228,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -1273,7 +1274,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -1319,7 +1320,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -1365,7 +1366,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -1411,7 +1412,7 @@ struct playComputer: View {
                     Button(action: {
                         labelText = "x"
                         
-                        if (fetchPermission) {
+                        if (fetchPermission && CurrentUid != nil) {
                             fetch()
                             fetchPermission = false
                         }
@@ -1523,32 +1524,32 @@ struct playComputer: View {
         
         
        
-        
-      
-        
-        var victories = 0
-        var losses = 0
-        var victoryRate = 0.0
-       
-        
-        for dog in dataManager.dogs {
-            nameDoc = dog.name
-            victories = victories + dog.victories
-            losses = losses + dog.losses
+        if (CurrentUid != nil) {
             
-            print("\(dog.victories)")
+            
+            var victories = 0
+            var losses = 0
+            var victoryRate = 0.0
+            
+            
+            for dog in dataManager.dogs {
+                nameDoc = dog.name
+                victories = victories + dog.victories
+                losses = losses + dog.losses
+                
+                print("\(dog.victories)")
+            }
+            
+            victories = victories + 1
+            
+            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+            
+            print(victories)
+            
+            dataManager.addDog(name: nameDoc, victories: victories,
+                               losses: losses, position: 0, victoryRate: victoryRate)
+            
         }
-        
-        victories = victories + 1
-        
-        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-        
-        print(victories)
-        
-        dataManager.addDog(name: nameDoc, victories: victories,
-                           losses: losses, position: 0, victoryRate: victoryRate)
-        
-        
     }
     
     
@@ -1597,29 +1598,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
-                        
-                        
                     }
                 }
                 break
@@ -1649,26 +1651,30 @@ struct playComputer: View {
                         winner = "computer wins"
                         
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
                         
                         
                         
@@ -1700,27 +1706,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
-                        
                         
                     }
                 }
@@ -1750,26 +1759,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
                         
                         
                     }
@@ -1800,26 +1813,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
                         
                         
                     }
@@ -1850,27 +1867,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
-                        
                         
                     }
                 }
@@ -1900,27 +1920,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
-                        
                         
                     }
                 }
@@ -1950,26 +1973,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
                         
                         
                     }
@@ -2000,26 +2027,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
                         
                         
                     }
@@ -2050,26 +2081,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
                         
                         
                     }
@@ -2100,27 +2135,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
-                        
                         
                     }
                 }
@@ -2150,26 +2188,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
                         
                         
                     }
@@ -2200,26 +2242,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
                         
                         
                     }
@@ -2250,26 +2296,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
                         
                         
                     }
@@ -2300,27 +2350,30 @@ struct playComputer: View {
                         
                         winner = "computer wins"
                         
-                        var victories = 0
-                        var losses = 0
-                        var victoryRate = 0.0
-                        
-                        for dog in dataManager.dogs {
-                            nameDoc = dog.name
-                            victories = victories + dog.victories
-                            losses = losses + dog.losses
+                        if (CurrentUid != nil) {
                             
-                            print("\(dog.victories)")
+                            var victories = 0
+                            var losses = 0
+                            var victoryRate = 0.0
+                            
+                            for dog in dataManager.dogs {
+                                nameDoc = dog.name
+                                victories = victories + dog.victories
+                                losses = losses + dog.losses
+                                
+                                print("\(dog.victories)")
+                            }
+                            
+                            losses = losses + 1
+                            
+                            victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
+                            
+                            print(victories)
+                            
+                            dataManager.addDog(name: nameDoc, victories: victories,
+                                               losses: losses, position: 0, victoryRate: victoryRate)
+                            
                         }
-                        
-                        losses = losses + 1
-                        
-                        victoryRate = (Double(victories) / (Double(victories) + Double(losses))) * 100.0
-                        
-                        print(victories)
-                        
-                        dataManager.addDog(name: nameDoc, victories: victories,
-                                           losses: losses, position: 0, victoryRate: victoryRate)
-                        
                     }
                 }
                 break

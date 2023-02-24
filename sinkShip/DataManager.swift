@@ -17,7 +17,7 @@ class DataManager: ObservableObject {
     
     init() {
        
-        fetchDogs()
+       // fetchDogs()
         
     }
     
